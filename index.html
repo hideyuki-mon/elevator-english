@@ -318,7 +318,7 @@
   </div>
 </div>
 
-<div class="back-today" id="backToday">↩ 今日へ</div>
+<div class="back-today" id="shuffleBtn">🔀 ランダム</div>
 <div class="swipe-hint">← tap to browse →</div>
 
 <script>
@@ -1152,13 +1152,16 @@ function buildSchedule(n) {
 }
 const SCHEDULE = buildSchedule(phrases.length);
 
-// Today's position in the schedule, based on date.
-function getTodayPos() {
-  const now = new Date();
-  const start = new Date(2026, 0, 1);
-  const diff = Math.floor((now - start) / (1000 * 60 * 60 * 24));
-  return ((diff % SCHEDULE.length) + SCHEDULE.length) % SCHEDULE.length;
+// Random position in the schedule: a fresh phrase every time the app opens.
+function randomPos(avoidIdx) {
+  let pos, tries = 0;
+  do { pos = Math.floor(Math.random() * SCHEDULE.length); tries++; }
+  while (avoidIdx != null && SCHEDULE[pos].idx === avoidIdx && tries < 20);
+  return pos;
 }
+let lastIdx = null;
+try { const v = localStorage.getItem('ee_last'); lastIdx = v === null ? null : Number(v); } catch (e) {}
+let basePos = randomPos(lastIdx);
 
 // Stable color per category, for instant visual recognition
 // (ADS 第2回: 認知コストを下げる軽量ビジュアル).
@@ -1187,15 +1190,13 @@ let currentOffset = 0; // offset from today
 const TOTAL_SHOW = 5;
 
 function renderPhrase(offset) {
-  const basePos = getTodayPos();
   const pos = ((basePos + offset) % SCHEDULE.length + SCHEDULE.length) % SCHEDULE.length;
   const slot = SCHEDULE[pos];
   const idx = slot.idx;
   const p = phrases[idx];
 
-  const now = new Date();
-  const targetDate = new Date(now);
-  targetDate.setDate(targetDate.getDate() + offset);
+  // remember the phrase shown on open/shuffle, to avoid repeating it next time
+  if (offset === 0) { try { localStorage.setItem('ee_last', String(idx)); } catch (e) {} }
 
   document.getElementById('phraseNumText').textContent = `Phrase #${String(idx + 1).padStart(3, '0')} / ${phrases.length}`;
   document.getElementById('reviewBadge').className = 'review-badge' + (slot.review ? ' show' : '');
@@ -1211,10 +1212,10 @@ function renderPhrase(offset) {
   document.getElementById('context').textContent = p.context;
   document.getElementById('exampleEn').textContent = p.exEn;
   document.getElementById('exampleJa').textContent = p.exJa;
-  document.getElementById('dateDisplay').textContent = formatDate(targetDate);
+  document.getElementById('dateDisplay').textContent = formatDate(new Date());
 
-  // "今日へ" appears only when not on today (不要なステップを消す)
-  document.getElementById('backToday').className = 'back-today' + (offset !== 0 ? ' show' : '');
+  // shuffle button is always available
+  document.getElementById('shuffleBtn').className = 'back-today show';
 
   // dots: center = current phrase
   const dots = document.getElementById('dots');
@@ -1256,7 +1257,7 @@ document.addEventListener('touchend', e => {
 
 // Click tap (left half = back, right half = forward)
 document.addEventListener('click', e => {
-  if (e.target.closest('#backToday')) return;
+  if (e.target.closest('#shuffleBtn')) return;
   const x = e.clientX;
   const w = window.innerWidth;
   switchPhrase(currentOffset + (x < w / 2 ? -1 : 1));
@@ -1269,10 +1270,12 @@ document.addEventListener('keydown', e => {
   else if (e.key === 'Home') switchPhrase(0);
 });
 
-// Back to today
-document.getElementById('backToday').addEventListener('click', e => {
+// Shuffle: jump to a new random phrase
+document.getElementById('shuffleBtn').addEventListener('click', e => {
   e.stopPropagation();
-  if (currentOffset !== 0) switchPhrase(0);
+  const curIdx = SCHEDULE[((basePos + currentOffset) % SCHEDULE.length + SCHEDULE.length) % SCHEDULE.length].idx;
+  basePos = randomPos(curIdx);
+  switchPhrase(0);
 });
 
 // Init
