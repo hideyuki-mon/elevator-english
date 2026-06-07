@@ -241,6 +241,41 @@
     animation: fadeUp 0.8s 0.25s cubic-bezier(0.16, 1, 0.3, 1) both;
   }
 
+  /* Review badge (第7回: 復習を自然に織り込む) */
+  .review-badge {
+    display: none;
+    margin-left: 8px;
+    font-size: 9px;
+    letter-spacing: 0.12em;
+    color: var(--bg);
+    background: var(--gold);
+    border-radius: 10px;
+    padding: 2px 7px;
+    vertical-align: middle;
+    font-family: 'Noto Sans JP', sans-serif;
+  }
+  .review-badge.show { display: inline-block; }
+
+  /* Back to today (第2回 Rule10: 不要なステップを消す) */
+  .back-today {
+    position: fixed;
+    top: 16px;
+    left: 16px;
+    z-index: 3;
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    color: var(--muted);
+    border: 1px solid rgba(107,104,128,0.4);
+    border-radius: 16px;
+    padding: 5px 12px;
+    background: rgba(19,19,26,0.6);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s;
+    cursor: pointer;
+  }
+  .back-today.show { opacity: 1; pointer-events: auto; }
+
   /* Swipe hint */
   .swipe-hint {
     position: fixed;
@@ -269,7 +304,7 @@
     <div class="day-line right"></div>
   </div>
 
-  <div class="phrase-num" id="phraseNum">Phrase #001</div>
+  <div class="phrase-num" id="phraseNum"><span id="phraseNumText">Phrase #001</span><span class="review-badge" id="reviewBadge">復習</span></div>
   <div class="tag" id="tag">Greeting</div>
 
   <div class="phrase-en" id="phraseEn">I'll be back.</div>
@@ -289,6 +324,7 @@
   </div>
 </div>
 
+<div class="back-today" id="backToday">↩ 今日へ</div>
 <div class="swipe-hint">← tap to browse →</div>
 
 <script>
@@ -1095,12 +1131,47 @@ const phrases = [
   },
 ];
 
-// Get today's phrase index based on date
-function getTodayIndex() {
+// Spaced-repetition schedule: introduce each phrase once, then weave in
+// reviews at expanding intervals so review happens naturally in the daily
+// flow rather than as a separate, boring "review mode" (ADS 第7回).
+function buildSchedule(n) {
+  const gaps = [2, 5, 11, 25];
+  const reviewsAt = {};
+  const seq = [];
+  let next = 0, pos = 0, maxPos = 0;
+  while (next < n || pos <= maxPos) {
+    if (reviewsAt[pos]) {
+      for (const idx of reviewsAt[pos]) seq.push({ idx, review: true });
+    }
+    if (next < n) {
+      seq.push({ idx: next, review: false });
+      for (const g of gaps) {
+        const rp = pos + g;
+        (reviewsAt[rp] = reviewsAt[rp] || []).push(next);
+        if (rp > maxPos) maxPos = rp;
+      }
+      next++;
+    }
+    pos++;
+  }
+  return seq;
+}
+const SCHEDULE = buildSchedule(phrases.length);
+
+// Today's position in the schedule, based on date.
+function getTodayPos() {
   const now = new Date();
   const start = new Date(2026, 0, 1);
   const diff = Math.floor((now - start) / (1000 * 60 * 60 * 24));
-  return diff % phrases.length;
+  return ((diff % SCHEDULE.length) + SCHEDULE.length) % SCHEDULE.length;
+}
+
+// Stable color per category, for instant visual recognition
+// (ADS 第2回: 認知コストを下げる軽量ビジュアル).
+function tagColor(tag) {
+  let h = 0;
+  for (let i = 0; i < tag.length; i++) h = (h * 31 + tag.charCodeAt(i)) % 360;
+  return `hsl(${h}, 42%, 64%)`;
 }
 
 function formatDate(d) {
@@ -1122,8 +1193,10 @@ let currentOffset = 0; // offset from today
 const TOTAL_SHOW = 5;
 
 function renderPhrase(offset) {
-  const baseIdx = getTodayIndex();
-  const idx = ((baseIdx + offset) % phrases.length + phrases.length) % phrases.length;
+  const basePos = getTodayPos();
+  const pos = ((basePos + offset) % SCHEDULE.length + SCHEDULE.length) % SCHEDULE.length;
+  const slot = SCHEDULE[pos];
+  const idx = slot.idx;
   const p = phrases[idx];
 
   const now = new Date();
@@ -1136,8 +1209,15 @@ function renderPhrase(offset) {
     : `${DAYS_JA[targetDate.getDay()]}曜日`;
 
   document.getElementById('dayText').textContent = dayLabel;
-  document.getElementById('phraseNum').textContent = `Phrase #${String(idx + 1).padStart(3, '0')} / ${phrases.length}`;
-  document.getElementById('tag').textContent = p.tag;
+  document.getElementById('phraseNumText').textContent = `Phrase #${String(idx + 1).padStart(3, '0')} / ${phrases.length}`;
+  document.getElementById('reviewBadge').className = 'review-badge' + (slot.review ? ' show' : '');
+
+  const tagEl = document.getElementById('tag');
+  tagEl.textContent = p.tag;
+  const col = tagColor(p.tag);
+  tagEl.style.color = col;
+  tagEl.style.borderColor = col;
+
   document.getElementById('phraseEn').childNodes[0].textContent = p.en;
   document.getElementById('phraseJa').textContent = p.ja;
   document.getElementById('context').textContent = p.context;
@@ -1145,16 +1225,11 @@ function renderPhrase(offset) {
   document.getElementById('exampleJa').textContent = p.exJa;
   document.getElementById('dateDisplay').textContent = formatDate(targetDate);
 
-  // Update dots
+  // "今日へ" appears only when not on today (不要なステップを消す)
+  document.getElementById('backToday').className = 'back-today' + (offset !== 0 ? ' show' : '');
+
+  // dots: center = current phrase
   const dots = document.getElementById('dots');
-  dots.innerHTML = '';
-  for (let i = 0; i < TOTAL_SHOW; i++) {
-    const dot = document.createElement('div');
-    dot.className = 'dot' + (i === Math.floor(TOTAL_SHOW / 2) + offset ? ' active' : '');
-    // simpler: center dot = today
-    dots.appendChild(dot);
-  }
-  // re-render dots correctly (center dot = current phrase)
   dots.innerHTML = '';
   const range = Math.floor(TOTAL_SHOW / 2);
   for (let i = -range; i <= range; i++) {
@@ -1191,11 +1266,25 @@ document.addEventListener('touchend', e => {
   }
 });
 
-// Click tap
+// Click tap (left half = back, right half = forward)
 document.addEventListener('click', e => {
+  if (e.target.closest('#backToday')) return;
   const x = e.clientX;
   const w = window.innerWidth;
   switchPhrase(currentOffset + (x < w / 2 ? -1 : 1));
+});
+
+// Keyboard navigation (desktop): no visible buttons added (Rule 10)
+document.addEventListener('keydown', e => {
+  if (e.key === 'ArrowLeft') switchPhrase(currentOffset - 1);
+  else if (e.key === 'ArrowRight') switchPhrase(currentOffset + 1);
+  else if (e.key === 'Home') switchPhrase(0);
+});
+
+// Back to today
+document.getElementById('backToday').addEventListener('click', e => {
+  e.stopPropagation();
+  if (currentOffset !== 0) switchPhrase(0);
 });
 
 // Init
