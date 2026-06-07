@@ -298,12 +298,6 @@
 <body>
 
 <div class="card" id="card">
-  <div class="day-badge">
-    <div class="day-line"></div>
-    <span class="day-text" id="dayText">Day 1</span>
-    <div class="day-line right"></div>
-  </div>
-
   <div class="phrase-num" id="phraseNum"><span id="phraseNumText">Phrase #001</span><span class="review-badge" id="reviewBadge">復習</span></div>
   <div class="tag" id="tag">Greeting</div>
 
@@ -1203,12 +1197,6 @@ function renderPhrase(offset) {
   const targetDate = new Date(now);
   targetDate.setDate(targetDate.getDate() + offset);
 
-  const dayLabel = offset === 0 ? 'Today'
-    : offset === 1 ? 'Tomorrow'
-    : offset === -1 ? 'Yesterday'
-    : `${DAYS_JA[targetDate.getDay()]}曜日`;
-
-  document.getElementById('dayText').textContent = dayLabel;
   document.getElementById('phraseNumText').textContent = `Phrase #${String(idx + 1).padStart(3, '0')} / ${phrases.length}`;
   document.getElementById('reviewBadge').className = 'review-badge' + (slot.review ? ' show' : '');
 
