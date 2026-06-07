@@ -330,805 +330,805 @@
 <script>
 const phrases = [
   {
-    tag: "Greeting",
-    en: "I'll be back.",
-    ja: "また戻ってきます。",
-    context: "外出や離席のときのひとこと。\"See you later.\" より少しクールなニュアンス。",
-    exEn: '"I\'ll be back in ten minutes."',
-    exJa: "10分で戻ります。"
-  },
-  {
-    tag: "Suggestion",
-    en: "Shall I cook?",
-    ja: "私が料理しましょうか？",
-    context: "相手のために何かをしようかと申し出るときの丁寧な表現。",
-    exEn: '"Shall I cook dinner tonight?"',
-    exJa: "今夜は私が夕飯を作りましょうか？"
-  },
-  {
-    tag: "Daily",
-    en: "I'm starving.",
-    ja: "お腹がペコペコです。",
-    context: "\"I'm hungry.\" より強調した表現。ランチ前や仕事終わりに使える。",
-    exEn: '"I\'m starving — let\'s grab something to eat."',
-    exJa: "お腹空いた、何か食べに行こう。"
-  },
-  {
-    tag: "Feeling",
-    en: "That makes sense.",
-    ja: "なるほど、それは分かります。",
-    context: "相手の説明に納得したときの自然な相槌。\"I see.\" の少し丁寧なバージョン。",
-    exEn: '"Oh, that makes sense now. Thanks!"',
-    exJa: "あ、なるほど。ありがとう！"
-  },
-  {
-    tag: "Request",
-    en: "Could you say that again?",
-    ja: "もう一度言っていただけますか？",
-    context: "聞き取れなかったときの丁寧なお願い。\"What?\" や \"Pardon?\" より礼儀正しい。",
-    exEn: '"Sorry, could you say that again, please?"',
-    exJa: "すみません、もう一度おっしゃっていただけますか？"
-  },
-  {
-    tag: "Time",
-    en: "I'm running late.",
-    ja: "遅れています。",
-    context: "待ち合わせや会議に遅刻しそうなとき。メッセージでも口頭でも使える定番表現。",
-    exEn: '"Sorry, I\'m running late. Be there in 5!"',
-    exJa: "ごめん、遅れてる。あと5分で着く！"
-  },
-  {
-    tag: "Opinion",
-    en: "I couldn't agree more.",
-    ja: "まったく同感です。",
-    context: "強く同意するときの表現。\"I agree.\" より熱量がある。",
-    exEn: '"I couldn\'t agree more with your point."',
-    exJa: "あなたの意見にまったく同感です。"
-  },
-  {
-    tag: "Social",
-    en: "Long time no see!",
-    ja: "久しぶりだね！",
-    context: "しばらく会っていない人への定番の挨拶。フォーマル・カジュアル問わず使える。",
-    exEn: '"Long time no see! How have you been?"',
-    exJa: "久しぶり！元気にしてた？"
-  },
-  {
-    tag: "Work",
-    en: "Leave it to me.",
-    ja: "任せてください。",
-    context: "仕事でも日常でも使える頼もしいひとこと。自信を持って引き受けるときに。",
-    exEn: '"Don\'t worry. Leave it to me."',
-    exJa: "心配しないで。私に任せて。"
-  },
-  {
-    tag: "Feeling",
-    en: "I'm a bit under the weather.",
-    ja: "少し体調が優れません。",
-    context: "体調不良を丁寧に伝える慣用句。直接的すぎず使いやすい。",
-    exEn: '"I\'m a bit under the weather today, but I\'ll manage."',
-    exJa: "今日は少し体調が優れませんが、なんとかやります。"
-  },
-  {
-    tag: "Gratitude",
-    en: "I really appreciate it.",
-    ja: "本当にありがとうございます。",
-    context: "\"Thank you.\" より深い感謝を伝えるときに。フォーマルな場面でも自然。",
-    exEn: '"I really appreciate everything you\'ve done."',
-    exJa: "してくださったこと全部、本当に感謝しています。"
-  },
-  {
-    tag: "Daily",
-    en: "It's on the tip of my tongue.",
-    ja: "喉まで出かかっているんですが…",
-    context: "名前や言葉が思い出せないときの定番フレーズ。知っているのに出てこないもどかしさを表す。",
-    exEn: '"His name is on the tip of my tongue."',
-    exJa: "彼の名前、喉まで出かかってるんだけど。"
-  },
-  {
-    tag: "Suggestion",
-    en: "Why don't we take a break?",
-    ja: "少し休憩しませんか？",
-    context: "相手を誘うときの柔らかい提案。\"Let's...\" より押しつけがましくない。",
-    exEn: '"Why don\'t we take a break and grab some coffee?"',
-    exJa: "一息入れてコーヒーでも飲みませんか？"
+    "tag": "Morning",
+    "en": "Good morning, sleepyhead.",
+    "ja": "おはよう、寝ぼすけさん。",
+    "context": "朝、まだ眠そうなパートナーに優しく声をかけるときの愛情表現。",
+    "exEn": "\"Good morning, sleepyhead. Coffee's ready.\"",
+    "exJa": "おはよう、寝ぼすけさん。コーヒー入ったよ。"
+  },
+  {
+    "tag": "Morning",
+    "en": "Did you sleep well?",
+    "ja": "よく眠れた？",
+    "context": "起きたパートナーへの定番の気遣いのひとこと。",
+    "exEn": "\"Morning. Did you sleep well?\"",
+    "exJa": "おはよう。よく眠れた？"
+  },
+  {
+    "tag": "Morning",
+    "en": "Five more minutes.",
+    "ja": "あと5分だけ。",
+    "context": "もう少し寝ていたいときの甘えた言い方。",
+    "exEn": "\"Five more minutes, please.\"",
+    "exJa": "お願い、あと5分だけ。"
+  },
+  {
+    "tag": "Affection",
+    "en": "I love you.",
+    "ja": "愛してる。",
+    "context": "最も基本的で大切な愛情表現。いつでも使える。",
+    "exEn": "\"I love you, you know that?\"",
+    "exJa": "愛してるよ、知ってる？"
+  },
+  {
+    "tag": "Affection",
+    "en": "I missed you today.",
+    "ja": "今日は会いたかったよ。",
+    "context": "一日離れていた後に再会したときの素直な気持ち。",
+    "exEn": "\"There you are. I missed you today.\"",
+    "exJa": "やっと会えた。今日は会いたかったよ。"
+  },
+  {
+    "tag": "Affection",
+    "en": "You mean the world to me.",
+    "ja": "君は私のすべてだよ。",
+    "context": "相手が自分にとってどれほど大切かを伝える表現。",
+    "exEn": "\"I hope you know you mean the world to me.\"",
+    "exJa": "君が私のすべてだってこと、分かっててね。"
+  },
+  {
+    "tag": "Affection",
+    "en": "I'm so lucky to have you.",
+    "ja": "君がいてくれて本当に幸せ。",
+    "context": "相手の存在に感謝するときの温かい表現。",
+    "exEn": "\"I'm so lucky to have you in my life.\"",
+    "exJa": "君が人生にいてくれて本当に幸せだよ。"
+  },
+  {
+    "tag": "Affection",
+    "en": "I can't stop thinking about you.",
+    "ja": "君のことばかり考えちゃう。",
+    "context": "離れていても相手を想っていることを伝える表現。",
+    "exEn": "\"I can't stop thinking about you at work.\"",
+    "exJa": "仕事中も君のことばかり考えちゃう。"
+  },
+  {
+    "tag": "Affection",
+    "en": "You make me so happy.",
+    "ja": "君といると本当に幸せ。",
+    "context": "相手といる幸福感を素直に伝えるひとこと。",
+    "exEn": "\"You make me so happy, every single day.\"",
+    "exJa": "毎日、君といると本当に幸せだよ。"
+  },
+  {
+    "tag": "Care",
+    "en": "How was your day?",
+    "ja": "今日はどうだった？",
+    "context": "帰宅後などにお互いの一日を尋ねる定番の会話。",
+    "exEn": "\"Welcome home. How was your day?\"",
+    "exJa": "おかえり。今日はどうだった？"
+  },
+  {
+    "tag": "Care",
+    "en": "You look tired. Are you okay?",
+    "ja": "疲れてるみたいだけど、大丈夫？",
+    "context": "相手の様子を気遣うときの優しいひとこと。",
+    "exEn": "\"You look tired. Are you okay, honey?\"",
+    "exJa": "疲れてるみたいだね。大丈夫？"
+  },
+  {
+    "tag": "Care",
+    "en": "Take it easy today, okay?",
+    "ja": "今日は無理しないでね。",
+    "context": "送り出すときや疲れている相手への気遣い。",
+    "exEn": "\"Big day ahead. Take it easy, okay?\"",
+    "exJa": "大変な一日だね。無理しないでね。"
+  },
+  {
+    "tag": "Care",
+    "en": "Don't push yourself too hard.",
+    "ja": "頑張りすぎないでね。",
+    "context": "働きすぎな相手をいたわる表現。",
+    "exEn": "\"I worry about you. Don't push yourself too hard.\"",
+    "exJa": "心配だよ。頑張りすぎないでね。"
   },
   {
-    tag: "Compliment",
-    en: "You're doing great.",
-    ja: "よくやってますよ。",
-    context: "励ましや称賛のひとこと。仕事でも日常でも使いやすい温かい表現。",
-    exEn: '"Hey, you\'re doing great. Keep it up!"',
-    exJa: "ねえ、よくやってるよ。その調子！"
+    "tag": "Care",
+    "en": "Is everything alright?",
+    "ja": "何かあった？大丈夫？",
+    "context": "相手の元気がないときにそっと尋ねる表現。",
+    "exEn": "\"You've been quiet. Is everything alright?\"",
+    "exJa": "なんか静かだね。何かあった？"
   },
   {
-    tag: "Excuse",
-    en: "Something came up.",
-    ja: "急に用事ができてしまいました。",
-    context: "予定をキャンセルするときの自然な理由の伝え方。詳細を言わなくてもOK。",
-    exEn: '"Sorry, something came up and I can\'t make it tonight."',
-    exJa: "ごめん、急用ができて今夜は行けなくなった。"
+    "tag": "Contact",
+    "en": "I'm on my way home.",
+    "ja": "今から帰るよ。",
+    "context": "帰宅を知らせる定番のメッセージ。",
+    "exEn": "\"Just finished. I'm on my way home.\"",
+    "exJa": "今終わったよ。これから帰る。"
   },
   {
-    tag: "Emphasis",
-    en: "To be honest,",
-    ja: "正直に言うと、",
-    context: "本音や率直な意見を述べる前置き。\"Actually\" と同じような役割。",
-    exEn: '"To be honest, I wasn\'t sure at first."',
-    exJa: "正直最初は確信が持てなかった。"
+    "tag": "Contact",
+    "en": "What time will you be home?",
+    "ja": "何時に帰ってくる？",
+    "context": "相手の帰宅時間を尋ねるときの表現。",
+    "exEn": "\"What time will you be home tonight?\"",
+    "exJa": "今夜は何時に帰ってくる？"
   },
   {
-    tag: "Daily",
-    en: "It's not a big deal.",
-    ja: "大したことじゃないですよ。",
-    context: "相手を安心させるひとこと。謙遜するときにも使える。",
-    exEn: '"Don\'t worry about it. It\'s not a big deal."',
-    exJa: "気にしないで。大したことじゃないから。"
+    "tag": "Contact",
+    "en": "I'm running a little late.",
+    "ja": "少し遅くなりそう。",
+    "context": "予定より遅れることを伝えるときの一言。",
+    "exEn": "\"Sorry, I'm running a little late.\"",
+    "exJa": "ごめん、少し遅くなりそう。"
   },
   {
-    tag: "Question",
-    en: "What brings you here?",
-    ja: "どういったご用件ですか？",
-    context: "相手が来た目的を尋ねる自然な一言。カジュアルにも使える。",
-    exEn: '"Hey! What brings you here today?"',
-    exJa: "あれ、今日はどうしたの？"
+    "tag": "Contact",
+    "en": "Text me when you get there.",
+    "ja": "着いたら連絡してね。",
+    "context": "相手の安全を気遣って連絡を頼む表現。",
+    "exEn": "\"Drive safe and text me when you get there.\"",
+    "exJa": "気をつけてね、着いたら連絡して。"
   },
   {
-    tag: "Greeting",
-    en: "How have you been?",
-    ja: "最近どうですか？",
-    context: "久しぶりに会う人への定番の挨拶。\"How are you?\" より少し親しみがある。",
-    exEn: '"It\'s been a while! How have you been?"',
-    exJa: "久しぶり！最近どう？"
+    "tag": "Contact",
+    "en": "I'll be home soon.",
+    "ja": "もうすぐ帰るよ。",
+    "context": "あと少しで帰れることを伝える安心の一言。",
+    "exEn": "\"Almost done here. I'll be home soon.\"",
+    "exJa": "もう少しで終わる。もうすぐ帰るよ。"
   },
   {
-    tag: "Reaction",
-    en: "That's a relief.",
-    ja: "それはよかった、安心しました。",
-    context: "心配が解消されたときのホッとした一言。自然な反応として使える。",
-    exEn: '"Oh, that\'s a relief to hear."',
-    exJa: "それを聞いて安心した。"
+    "tag": "Meals",
+    "en": "What do you want for dinner?",
+    "ja": "夕飯何がいい？",
+    "context": "夕食の相談をする毎日の会話。",
+    "exEn": "\"What do you want for dinner tonight?\"",
+    "exJa": "今夜の夕飯何がいい？"
   },
   {
-    tag: "Social",
-    en: "My treat.",
-    ja: "私のおごりです。",
-    context: "食事や飲み物を払うときの気前のいいひとこと。\"It's on me.\" と同じ意味。",
-    exEn: '"Don\'t worry about the bill. My treat!"',
-    exJa: "お会計は気にしないで。私のおごりだから！"
+    "tag": "Meals",
+    "en": "Should we order in tonight?",
+    "ja": "今夜は出前にする？",
+    "context": "外食や自炊ではなくデリバリーを提案する表現。",
+    "exEn": "\"I'm beat. Should we order in tonight?\"",
+    "exJa": "もうクタクタ。今夜は出前にする？"
   },
   {
-    tag: "Clarify",
-    en: "What do you mean?",
-    ja: "どういう意味ですか？",
-    context: "意味が分からないときに確認する素直な表現。攻撃的にならないシンプルな聞き方。",
-    exEn: '"Wait, what do you mean by that?"',
-    exJa: "ちょっと待って、それどういう意味？"
+    "tag": "Meals",
+    "en": "I'll cook tonight.",
+    "ja": "今夜は私が作るよ。",
+    "context": "相手をいたわって料理を引き受ける表現。",
+    "exEn": "\"You rest. I'll cook tonight.\"",
+    "exJa": "君は休んでて。今夜は私が作るよ。"
   },
   {
-    tag: "Advice",
-    en: "Take it easy.",
-    ja: "無理しないでね。",
-    context: "体調が悪い人や疲れている人への優しい一言。別れ際の挨拶にも使える。",
-    exEn: '"You\'ve been working hard. Take it easy this weekend."',
-    exJa: "ずっと頑張ってたね。週末はゆっくりして。"
+    "tag": "Meals",
+    "en": "This is delicious. You made it?",
+    "ja": "これ美味しい。君が作ったの？",
+    "context": "相手の手料理をほめるときの表現。",
+    "exEn": "\"Wow, this is delicious. You made it?\"",
+    "exJa": "わあ、これ美味しい。君が作ったの？"
   },
   {
-    tag: "Agree",
-    en: "That's fair enough.",
-    ja: "それはもっともです。",
-    context: "相手の意見や理由に納得するときの表現。反論せず受け入れるニュアンスがある。",
-    exEn: '"Yeah, that\'s fair enough. I understand your point."',
-    exJa: "うん、それはもっともだね。言いたいことはわかる。"
+    "tag": "Meals",
+    "en": "Let's grab something to eat.",
+    "ja": "何か食べに行こう。",
+    "context": "気軽に外食に誘うときの表現。",
+    "exEn": "\"I'm hungry. Let's grab something to eat.\"",
+    "exJa": "お腹すいた。何か食べに行こう。"
   },
   {
-    tag: "Daily",
-    en: "I'll keep that in mind.",
-    ja: "覚えておきます。",
-    context: "アドバイスや情報を受け取ったときの丁寧な返答。\"OK\" より誠実に聞こえる。",
-    exEn: '"Thanks for the tip. I\'ll keep that in mind."',
-    exJa: "アドバイスありがとう。覚えておきます。"
+    "tag": "Chores",
+    "en": "Can you do the dishes?",
+    "ja": "お皿洗ってくれる？",
+    "context": "家事をお願いするときの定番表現。",
+    "exEn": "\"I'll cook if you can do the dishes.\"",
+    "exJa": "私が作るから、お皿洗ってくれる？"
   },
   {
-    tag: "Surprise",
-    en: "No way!",
-    ja: "まさか！ / うそでしょ！",
-    context: "驚いたときの自然なリアクション。信じられないことを聞いたときに思わず出る一言。",
-    exEn: '"No way! You actually did it!"',
-    exJa: "まじで！？本当にやったの！"
+    "tag": "Chores",
+    "en": "I'll take out the trash.",
+    "ja": "ゴミ出しは私がやるよ。",
+    "context": "家事を自分から引き受ける表現。",
+    "exEn": "\"Don't worry, I'll take out the trash.\"",
+    "exJa": "大丈夫、ゴミ出しは私がやるよ。"
   },
   {
-    tag: "Feeling",
-    en: "I'm over it.",
-    ja: "もう吹っ切れました。",
-    context: "過去のことを気にしなくなったときの表現。失恋や失敗を乗り越えたニュアンスも。",
-    exEn: '"We broke up, but honestly, I\'m over it now."',
-    exJa: "別れたけど、正直もう吹っ切れてる。"
+    "tag": "Chores",
+    "en": "Did you do the laundry?",
+    "ja": "洗濯した？",
+    "context": "家事の進み具合を確認する日常会話。",
+    "exEn": "\"Did you do the laundry yet?\"",
+    "exJa": "もう洗濯した？"
   },
   {
-    tag: "Polite",
-    en: "After you.",
-    ja: "お先にどうぞ。",
-    context: "ドアや列で相手を先に通すときのひとこと。エレベーターでも使える紳士的な表現。",
-    exEn: '"Please, after you."',
-    exJa: "どうぞ、お先に。"
+    "tag": "Chores",
+    "en": "We're out of milk.",
+    "ja": "牛乳が切れてるよ。",
+    "context": "買い足しが必要なものを知らせる表現。",
+    "exEn": "\"Heads up, we're out of milk.\"",
+    "exJa": "一応言っとくね、牛乳切れてるよ。"
   },
   {
-    tag: "Hesitation",
-    en: "I'm not so sure about that.",
-    ja: "それはちょっと確信が持てないです。",
-    context: "はっきり反論せずに疑問を示す柔らかい表現。会議でも使いやすい。",
-    exEn: '"Hmm, I\'m not so sure about that approach."',
-    exJa: "うーん、そのやり方はちょっど確信が持てないな。"
+    "tag": "Chores",
+    "en": "Can you pick up some groceries?",
+    "ja": "買い物してきてくれる？",
+    "context": "帰り道の買い物をお願いする表現。",
+    "exEn": "\"Can you pick up some groceries on your way home?\"",
+    "exJa": "帰りに買い物してきてくれる？"
   },
   {
-    tag: "Motivation",
-    en: "Go for it!",
-    ja: "やってみよう！/ 頑張れ！",
-    context: "相手を後押しするときの元気な一言。挑戦を応援するフレーズ。",
-    exEn: '"It sounds scary, but go for it!"',
-    exJa: "怖そうだけど、やってみよう！"
+    "tag": "Plans",
+    "en": "What should we do this weekend?",
+    "ja": "今週末どうする？",
+    "context": "週末の予定を相談するときの会話。",
+    "exEn": "\"What should we do this weekend?\"",
+    "exJa": "今週末どうしよっか？"
   },
   {
-    tag: "Work",
-    en: "Let's circle back on this.",
-    ja: "この件はまた後で話しましょう。",
-    context: "会議で一旦保留し、後で議論を戻したいときのビジネス表現。",
-    exEn: '"Good point — let\'s circle back on this next week."',
-    exJa: "いい指摘だね。来週またこの件に戻ろう。"
+    "tag": "Plans",
+    "en": "Let's go on a date.",
+    "ja": "デートしようよ。",
+    "context": "二人で出かけようと誘う表現。",
+    "exEn": "\"It's been a while. Let's go on a date.\"",
+    "exJa": "久しぶりにデートしようよ。"
   },
   {
-    tag: "Work",
-    en: "I'll get back to you.",
-    ja: "後ほどご連絡します。",
-    context: "今すぐ答えられないときに、改めて返事をすると伝える定番表現。",
-    exEn: '"Let me check and I\'ll get back to you by tomorrow."',
-    exJa: "確認して、明日までにご連絡します。"
+    "tag": "Plans",
+    "en": "Are you free this Saturday?",
+    "ja": "土曜空いてる？",
+    "context": "予定を確認して誘うときの表現。",
+    "exEn": "\"Are you free this Saturday? I have an idea.\"",
+    "exJa": "土曜空いてる？やりたいことがあるんだ。"
   },
   {
-    tag: "Work",
-    en: "Can we touch base later?",
-    ja: "あとで少し話せますか？",
-    context: "短く近況や進捗を確認したいときのカジュアルなビジネス表現。",
-    exEn: '"Can we touch base later about the project?"',
-    exJa: "プロジェクトの件、あとで少し話せる？"
+    "tag": "Plans",
+    "en": "Let's stay in tonight.",
+    "ja": "今夜は家でゆっくりしよう。",
+    "context": "出かけずに家で過ごそうと提案する表現。",
+    "exEn": "\"It's cold out. Let's stay in tonight.\"",
+    "exJa": "外寒いし、今夜は家でゆっくりしよう。"
   },
   {
-    tag: "Meeting",
-    en: "Let's keep it brief.",
-    ja: "手短にいきましょう。",
-    context: "会議や話を短く済ませたいときのひとこと。",
-    exEn: '"We\'re short on time, so let\'s keep it brief."',
-    exJa: "時間がないので手短にいきましょう。"
+    "tag": "Plans",
+    "en": "I made a reservation for us.",
+    "ja": "予約しておいたよ。",
+    "context": "サプライズで予約を取ったことを伝える表現。",
+    "exEn": "\"I made a reservation for us at seven.\"",
+    "exJa": "7時に予約しておいたよ。"
   },
   {
-    tag: "Work",
-    en: "I'm swamped right now.",
-    ja: "今、手一杯です。",
-    context: "仕事が立て込んでいて余裕がないことを伝える口語表現。",
-    exEn: '"Sorry, I\'m swamped right now. Can it wait?"',
-    exJa: "ごめん、今手一杯なんだ。後でもいい？"
+    "tag": "Plans",
+    "en": "Let's plan a trip together.",
+    "ja": "一緒に旅行の計画を立てよう。",
+    "context": "二人での旅行を提案するわくわくする表現。",
+    "exEn": "\"Let's plan a trip together this summer.\"",
+    "exJa": "今年の夏、一緒に旅行の計画を立てようよ。"
   },
   {
-    tag: "Email",
-    en: "Just a quick heads-up.",
-    ja: "ちょっとお知らせです。",
-    context: "事前に軽く知らせておくときの前置き。メールでも会話でも使える。",
-    exEn: '"Just a quick heads-up: the meeting moved to 3 p.m."',
-    exJa: "一応お知らせです。会議が15時に変更になりました。"
+    "tag": "Gratitude",
+    "en": "Thank you for everything.",
+    "ja": "いつもありがとう。",
+    "context": "日々の支えへの感謝を伝える表現。",
+    "exEn": "\"I don't say it enough — thank you for everything.\"",
+    "exJa": "あまり言えてないけど、いつもありがとう。"
   },
   {
-    tag: "Work",
-    en: "That works for me.",
-    ja: "それで大丈夫です。",
-    context: "提案や日程に同意するときの自然な返答。",
-    exEn: '"Friday at noon? That works for me."',
-    exJa: "金曜の正午？それで大丈夫です。"
+    "tag": "Gratitude",
+    "en": "I really appreciate you.",
+    "ja": "君のこと本当に感謝してる。",
+    "context": "相手の存在そのものに感謝する深い表現。",
+    "exEn": "\"I really appreciate you and all you do.\"",
+    "exJa": "君のこと、してくれること全部に感謝してる。"
   },
   {
-    tag: "Travel",
-    en: "Could you tell me the way?",
-    ja: "道を教えていただけますか？",
-    context: "知らない場所で道を尋ねるときの丁寧な表現。",
-    exEn: '"Excuse me, could you tell me the way to the station?"',
-    exJa: "すみません、駅への道を教えていただけますか？"
+    "tag": "Gratitude",
+    "en": "Thanks for putting up with me.",
+    "ja": "我慢してくれてありがとう。",
+    "context": "自分の至らなさを認めつつ感謝するユーモアある表現。",
+    "exEn": "\"I know I'm a handful. Thanks for putting up with me.\"",
+    "exJa": "手がかかるのは分かってる。我慢してくれてありがとう。"
   },
   {
-    tag: "Travel",
-    en: "Is this seat taken?",
-    ja: "この席、空いていますか？",
-    context: "電車やカフェで席が空いているか確認するときの定番フレーズ。",
-    exEn: '"Excuse me, is this seat taken?"',
-    exJa: "すみません、この席は空いていますか？"
+    "tag": "Apology",
+    "en": "I'm sorry. I was wrong.",
+    "ja": "ごめん、私が悪かった。",
+    "context": "素直に非を認めて謝る表現。",
+    "exEn": "\"I'm sorry. I was wrong, and I know it.\"",
+    "exJa": "ごめん、私が悪かった。分かってるよ。"
   },
   {
-    tag: "Hotel",
-    en: "I'd like to check in.",
-    ja: "チェックインをお願いします。",
-    context: "ホテルのフロントでチェックインを伝えるときの基本表現。",
-    exEn: '"Hi, I\'d like to check in. I have a reservation."',
-    exJa: "こんにちは、チェックインをお願いします。予約しています。"
+    "tag": "Apology",
+    "en": "I didn't mean to hurt you.",
+    "ja": "傷つけるつもりはなかったんだ。",
+    "context": "意図せず相手を傷つけたときの謝罪表現。",
+    "exEn": "\"I'm so sorry. I didn't mean to hurt you.\"",
+    "exJa": "本当にごめん。傷つけるつもりはなかったんだ。"
   },
   {
-    tag: "Travel",
-    en: "How long does it take?",
-    ja: "どのくらいかかりますか？",
-    context: "所要時間を尋ねるときの汎用表現。移動でも作業でも使える。",
-    exEn: '"How long does it take to get there by train?"',
-    exJa: "電車でそこまでどのくらいかかりますか？"
+    "tag": "Apology",
+    "en": "Can we talk about it?",
+    "ja": "ちゃんと話さない？",
+    "context": "わだかまりを解くために対話を持ちかける表現。",
+    "exEn": "\"I don't want to fight. Can we talk about it?\"",
+    "exJa": "ケンカしたくないんだ。ちゃんと話さない？"
   },
   {
-    tag: "Airport",
-    en: "Where can I catch a taxi?",
-    ja: "タクシーはどこで乗れますか？",
-    context: "空港や駅でタクシー乗り場を尋ねるときの表現。",
-    exEn: '"Excuse me, where can I catch a taxi?"',
-    exJa: "すみません、タクシーはどこで乗れますか？"
+    "tag": "Apology",
+    "en": "Let's not go to bed angry.",
+    "ja": "怒ったまま寝るのはやめよう。",
+    "context": "夜、仲直りしてから休もうと促す表現。",
+    "exEn": "\"Come here. Let's not go to bed angry.\"",
+    "exJa": "おいで。怒ったまま寝るのはやめよう。"
   },
   {
-    tag: "Travel",
-    en: "I think I'm lost.",
-    ja: "道に迷ったみたいです。",
-    context: "道に迷ったことを伝えて助けを求めるときの一言。",
-    exEn: '"Sorry to bother you — I think I\'m lost."',
-    exJa: "すみません、道に迷ったみたいなんです。"
+    "tag": "Comfort",
+    "en": "I'm always on your side.",
+    "ja": "いつも君の味方だよ。",
+    "context": "どんなときも味方であると安心させる表現。",
+    "exEn": "\"No matter what, I'm always on your side.\"",
+    "exJa": "何があっても、いつも君の味方だよ。"
   },
   {
-    tag: "Food",
-    en: "Could I get the check?",
-    ja: "お会計をお願いします。",
-    context: "レストランで会計を頼むときの定番表現（英国では bill）。",
-    exEn: '"Excuse me, could I get the check, please?"',
-    exJa: "すみません、お会計をお願いします。"
+    "tag": "Comfort",
+    "en": "We'll figure it out together.",
+    "ja": "二人でなんとかしよう。",
+    "context": "困難を一緒に乗り越えようと支える表現。",
+    "exEn": "\"Don't stress. We'll figure it out together.\"",
+    "exJa": "気に病まないで。二人でなんとかしよう。"
   },
   {
-    tag: "Food",
-    en: "What do you recommend?",
-    ja: "おすすめは何ですか？",
-    context: "店員にメニューのおすすめを尋ねるときの便利な質問。",
-    exEn: '"It\'s my first time here. What do you recommend?"',
-    exJa: "初めて来たんですが、おすすめは何ですか？"
+    "tag": "Comfort",
+    "en": "I'm here for you.",
+    "ja": "私がついてるよ。",
+    "context": "つらいときにそばにいると伝える表現。",
+    "exEn": "\"Whatever happens, I'm here for you.\"",
+    "exJa": "何があっても、私がついてるよ。"
   },
   {
-    tag: "Food",
-    en: "I'll have the same.",
-    ja: "私も同じものを。",
-    context: "相手と同じ料理を注文するときの楽な言い方。",
-    exEn: '"That looks good. I\'ll have the same."',
-    exJa: "それ美味しそう。私も同じものにします。"
+    "tag": "Comfort",
+    "en": "Don't worry, I've got you.",
+    "ja": "心配しないで、私がいるから。",
+    "context": "不安な相手を安心させる頼もしい表現。",
+    "exEn": "\"Don't worry, I've got you.\"",
+    "exJa": "心配しないで、私がいるから。"
   },
   {
-    tag: "Cafe",
-    en: "For here or to go?",
-    ja: "店内ですか、お持ち帰りですか？",
-    context: "カフェで店員から聞かれる定番フレーズ。逆に自分が答える練習にも。",
-    exEn: '"One latte, please." "For here or to go?"',
-    exJa: "「ラテをひとつ」「店内ですか、持ち帰りですか？」"
+    "tag": "Cheer",
+    "en": "You've got this.",
+    "ja": "君ならできるよ。",
+    "context": "挑戦する相手を力強く応援する表現。",
+    "exEn": "\"Big presentation today? You've got this.\"",
+    "exJa": "今日は大事なプレゼン？君ならできるよ。"
   },
   {
-    tag: "Food",
-    en: "It's on me.",
-    ja: "ここは私が払います。",
-    context: "相手の分も支払うと申し出るときのひとこと。\"My treat.\" と同じ。",
-    exEn: '"Put your wallet away — it\'s on me."',
-    exJa: "財布はしまって、ここは私が出すよ。"
+    "tag": "Cheer",
+    "en": "I'm so proud of you.",
+    "ja": "君を本当に誇りに思うよ。",
+    "context": "相手の頑張りや成果をたたえる表現。",
+    "exEn": "\"You did it! I'm so proud of you.\"",
+    "exJa": "やったね！君を本当に誇りに思うよ。"
   },
   {
-    tag: "Shopping",
-    en: "I'm just looking, thanks.",
-    ja: "見ているだけです、ありがとう。",
-    context: "店員に声をかけられたとき、まだ買う気がないと伝える丁寧な断り方。",
-    exEn: '"Can I help you?" "I\'m just looking, thanks."',
-    exJa: "「何かお探しですか？」「見ているだけです、ありがとう」"
+    "tag": "Cheer",
+    "en": "I believe in you.",
+    "ja": "君を信じてる。",
+    "context": "自信を失っている相手を後押しする表現。",
+    "exEn": "\"You can do this. I believe in you.\"",
+    "exJa": "君ならできる。信じてるよ。"
   },
   {
-    tag: "Shopping",
-    en: "Do you have this in another size?",
-    ja: "別のサイズはありますか？",
-    context: "服や靴で別サイズの在庫を尋ねるときの表現。",
-    exEn: '"I like this. Do you have it in another size?"',
-    exJa: "これ気に入りました。別のサイズはありますか？"
+    "tag": "Touch",
+    "en": "Can I have a hug?",
+    "ja": "ハグしてもいい？",
+    "context": "甘えたいときにスキンシップを求める表現。",
+    "exEn": "\"Rough day. Can I have a hug?\"",
+    "exJa": "大変な一日だった。ハグしてもいい？"
   },
   {
-    tag: "Shopping",
-    en: "Can I pay by card?",
-    ja: "カードで払えますか？",
-    context: "支払い方法を確認するときの基本表現。",
-    exEn: '"Can I pay by card, or is it cash only?"',
-    exJa: "カードで払えますか、それとも現金のみですか？"
+    "tag": "Touch",
+    "en": "Come cuddle with me.",
+    "ja": "こっちで一緒にくっつこう。",
+    "context": "ソファやベッドでくっつこうと誘う表現。",
+    "exEn": "\"The movie's starting. Come cuddle with me.\"",
+    "exJa": "映画始まるよ。こっちで一緒にくっつこう。"
   },
   {
-    tag: "Shopping",
-    en: "Could you give me a discount?",
-    ja: "少し安くなりませんか？",
-    context: "値引き交渉ができる場面で使う表現。市場などで便利。",
-    exEn: '"If I buy two, could you give me a discount?"',
-    exJa: "2つ買ったら少し安くなりませんか？"
+    "tag": "Touch",
+    "en": "Hold my hand.",
+    "ja": "手をつなご。",
+    "context": "歩くときなどに手をつなぎたいときの表現。",
+    "exEn": "\"It's slippery. Hold my hand.\"",
+    "exJa": "滑るよ。手をつなご。"
   },
   {
-    tag: "Money",
-    en: "Keep the change.",
-    ja: "お釣りはとっておいてください。",
-    context: "チップ代わりに釣り銭を渡すときの一言。海外の飲食店などで。",
-    exEn: '"Here you go — keep the change."',
-    exJa: "はい、どうぞ。お釣りはとっておいて。"
+    "tag": "Touch",
+    "en": "Give me a kiss.",
+    "ja": "キスして。",
+    "context": "別れ際や甘えたいときの可愛い表現。",
+    "exEn": "\"I'm leaving. Give me a kiss.\"",
+    "exJa": "行ってくるね。キスして。"
   },
   {
-    tag: "Health",
-    en: "I'm not feeling well.",
-    ja: "体調が良くありません。",
-    context: "体調不良をストレートに伝える基本表現。",
-    exEn: '"I\'m not feeling well. I might head home early."',
-    exJa: "体調が良くないので、早めに帰るかもしれません。"
+    "tag": "Talk",
+    "en": "You won't believe what happened.",
+    "ja": "何があったか聞いてよ。",
+    "context": "出来事を話し始めるときのわくわくする前置き。",
+    "exEn": "\"You won't believe what happened at work today.\"",
+    "exJa": "今日職場で何があったか聞いてよ。"
   },
   {
-    tag: "Health",
-    en: "I think I'm catching a cold.",
-    ja: "風邪をひきかけているみたいです。",
-    context: "風邪の引き始めを伝えるときの定番表現。",
-    exEn: '"My throat hurts — I think I\'m catching a cold."',
-    exJa: "喉が痛いんだ。風邪をひきかけてるみたい。"
+    "tag": "Talk",
+    "en": "Guess what I did today.",
+    "ja": "今日何したと思う？",
+    "context": "今日の出来事をクイズのように切り出す表現。",
+    "exEn": "\"Guess what I did today — you'll laugh.\"",
+    "exJa": "今日何したと思う？絶対笑うよ。"
   },
   {
-    tag: "Health",
-    en: "Get well soon.",
-    ja: "お大事に。",
-    context: "体調を崩した相手を気遣うときの定番のひとこと。",
-    exEn: '"I heard you were sick. Get well soon!"',
-    exJa: "具合が悪いって聞いたよ。お大事にね！"
+    "tag": "Talk",
+    "en": "Tell me about your day.",
+    "ja": "今日のこと聞かせて。",
+    "context": "相手の話に耳を傾けたいときの優しい表現。",
+    "exEn": "\"Come sit. Tell me about your day.\"",
+    "exJa": "おいで、座って。今日のこと聞かせて。"
   },
   {
-    tag: "Weather",
-    en: "It looks like rain.",
-    ja: "雨が降りそうですね。",
-    context: "天気の話題でよく使う表現。スモールトークの定番。",
-    exEn: '"Better take an umbrella — it looks like rain."',
-    exJa: "傘を持って行った方がいいよ、雨が降りそうだから。"
+    "tag": "Compliment",
+    "en": "You look gorgeous today.",
+    "ja": "今日すごく素敵だね。",
+    "context": "相手の見た目をほめる表現。",
+    "exEn": "\"Wow, you look gorgeous today.\"",
+    "exJa": "わあ、今日すごく素敵だね。"
   },
   {
-    tag: "Weather",
-    en: "It's freezing today.",
-    ja: "今日は凍えるほど寒いですね。",
-    context: "とても寒い日に使う口語表現。\"cold\" を強調した言い方。",
-    exEn: '"It\'s freezing today. I can\'t feel my hands."',
-    exJa: "今日は凍えるほど寒い。手の感覚がないよ。"
+    "tag": "Compliment",
+    "en": "I love your smile.",
+    "ja": "君の笑顔が大好き。",
+    "context": "相手の笑顔をほめる温かい表現。",
+    "exEn": "\"There it is — I love your smile.\"",
+    "exJa": "あ、出た。君の笑顔が大好き。"
   },
   {
-    tag: "Daily",
-    en: "I'm running out of time.",
-    ja: "時間がなくなってきました。",
-    context: "締め切りや予定に追われているときの表現。",
-    exEn: '"Hurry up — we\'re running out of time."',
-    exJa: "急いで、時間がなくなってきてる。"
+    "tag": "Compliment",
+    "en": "That outfit looks great on you.",
+    "ja": "その服すごく似合ってるよ。",
+    "context": "服装をほめるときの表現。",
+    "exEn": "\"That outfit looks great on you.\"",
+    "exJa": "その服すごく似合ってるよ。"
   },
   {
-    tag: "Daily",
-    en: "Let me think about it.",
-    ja: "ちょっと考えさせてください。",
-    context: "即答を避けて検討したいときの自然な返答。",
-    exEn: '"That\'s a big decision. Let me think about it."',
-    exJa: "大きな決断だね。ちょっと考えさせて。"
+    "tag": "Compliment",
+    "en": "You smell nice.",
+    "ja": "いい匂いだね。",
+    "context": "近づいたときにさりげなくほめる表現。",
+    "exEn": "\"Mmm, you smell nice. New perfume?\"",
+    "exJa": "んー、いい匂い。新しい香水？"
   },
   {
-    tag: "Daily",
-    en: "It slipped my mind.",
-    ja: "うっかり忘れていました。",
-    context: "うっかり忘れてしまったことを伝える柔らかい言い訳。",
-    exEn: '"Sorry, I forgot to call — it totally slipped my mind."',
-    exJa: "ごめん、電話するの忘れてた。すっかり頭から抜けてた。"
+    "tag": "Feeling",
+    "en": "I feel so safe with you.",
+    "ja": "君といると安心する。",
+    "context": "相手といる安心感を伝える表現。",
+    "exEn": "\"I feel so safe with you.\"",
+    "exJa": "君といると本当に安心する。"
   },
   {
-    tag: "Daily",
-    en: "I can't make it today.",
-    ja: "今日は行けません。",
-    context: "予定に参加できないことを伝えるときの定番表現。",
-    exEn: '"Something came up — I can\'t make it today."',
-    exJa: "用事ができて、今日は行けないんだ。"
+    "tag": "Feeling",
+    "en": "I've been missing you all day.",
+    "ja": "一日中会いたかった。",
+    "context": "離れていた時間の寂しさを伝える表現。",
+    "exEn": "\"Finally. I've been missing you all day.\"",
+    "exJa": "やっとだ。一日中会いたかったよ。"
   },
   {
-    tag: "Request",
-    en: "Could you do me a favor?",
-    ja: "お願いがあるのですが。",
-    context: "頼みごとを切り出すときの前置き表現。",
-    exEn: '"Could you do me a favor and check this email?"',
-    exJa: "お願いがあるんだけど、このメール見てくれる？"
+    "tag": "Feeling",
+    "en": "I just want to be with you.",
+    "ja": "ただ君と一緒にいたい。",
+    "context": "予定よりも相手といたい気持ちを伝える表現。",
+    "exEn": "\"Forget the plans. I just want to be with you.\"",
+    "exJa": "予定なんていいよ。ただ君と一緒にいたい。"
   },
   {
-    tag: "Request",
-    en: "Would you mind helping me?",
-    ja: "手伝っていただけますか？",
-    context: "丁寧に手助けを頼むときの表現。\"mind\" は「気にする」の意。",
-    exEn: '"Would you mind helping me move this table?"',
-    exJa: "このテーブルを動かすの手伝ってもらえますか？"
+    "tag": "Future",
+    "en": "I want to grow old with you.",
+    "ja": "君と一緒に歳を重ねたい。",
+    "context": "将来を共にしたい気持ちを伝える表現。",
+    "exEn": "\"I mean it — I want to grow old with you.\"",
+    "exJa": "本気だよ。君と一緒に歳を重ねたい。"
   },
   {
-    tag: "Request",
-    en: "Can you give me a hand?",
-    ja: "ちょっと手を貸してくれる？",
-    context: "カジュアルに手伝いを頼むときの口語表現。",
-    exEn: '"Can you give me a hand with these bags?"',
-    exJa: "この荷物、手を貸してくれる？"
+    "tag": "Future",
+    "en": "Let's build a life together.",
+    "ja": "一緒に人生を築いていこう。",
+    "context": "二人の未来を約束するような表現。",
+    "exEn": "\"Let's build a life together, you and me.\"",
+    "exJa": "君と僕で、一緒に人生を築いていこう。"
   },
   {
-    tag: "Polite",
-    en: "Take your time.",
-    ja: "ゆっくりでいいですよ。",
-    context: "相手を急かさず、落ち着いてと伝える優しい表現。",
-    exEn: '"No rush at all. Take your time."',
-    exJa: "全然急がないから、ゆっくりでいいよ。"
+    "tag": "Future",
+    "en": "I can't imagine life without you.",
+    "ja": "君のいない人生なんて考えられない。",
+    "context": "相手がかけがえのない存在だと伝える表現。",
+    "exEn": "\"Honestly, I can't imagine life without you.\"",
+    "exJa": "正直、君のいない人生なんて考えられない。"
   },
   {
-    tag: "Polite",
-    en: "I'm sorry to bother you.",
-    ja: "お邪魔してすみません。",
-    context: "相手の作業を中断させて話しかけるときの丁寧な前置き。",
-    exEn: '"I\'m sorry to bother you, but do you have a minute?"',
-    exJa: "お邪魔してすみません、少しお時間ありますか？"
+    "tag": "Bedtime",
+    "en": "Goodnight, sweet dreams.",
+    "ja": "おやすみ、いい夢を。",
+    "context": "寝る前の定番の優しいひとこと。",
+    "exEn": "\"Goodnight, sweet dreams. Love you.\"",
+    "exJa": "おやすみ、いい夢を。大好きだよ。"
   },
   {
-    tag: "Apology",
-    en: "It's my fault.",
-    ja: "私のせいです。",
-    context: "自分の非を素直に認めるときの表現。",
-    exEn: '"Don\'t blame him — it\'s my fault."',
-    exJa: "彼を責めないで。私のせいだから。"
+    "tag": "Bedtime",
+    "en": "Let's go to bed.",
+    "ja": "そろそろ寝よう。",
+    "context": "一緒に休もうと促す表現。",
+    "exEn": "\"It's late. Let's go to bed.\"",
+    "exJa": "もう遅いよ。そろそろ寝よう。"
   },
   {
-    tag: "Apology",
-    en: "I didn't mean to.",
-    ja: "わざとじゃないんです。",
-    context: "意図せずやってしまったことを弁解するときの表現。",
-    exEn: '"I\'m so sorry — I didn\'t mean to."',
-    exJa: "本当にごめん、わざとじゃないんだ。"
+    "tag": "Bedtime",
+    "en": "I sleep better next to you.",
+    "ja": "君の隣だとよく眠れる。",
+    "context": "一緒に眠る安心感を伝える表現。",
+    "exEn": "\"Come here. I sleep better next to you.\"",
+    "exJa": "おいで。君の隣だとよく眠れるんだ。"
   },
   {
-    tag: "Gratitude",
-    en: "I owe you one.",
-    ja: "借りができたね。",
-    context: "助けてもらってお返しをしたいときのカジュアルな感謝表現。",
-    exEn: '"Thanks for covering for me. I owe you one."',
-    exJa: "代わってくれてありがとう。借りができたね。"
+    "tag": "Home",
+    "en": "I'm home!",
+    "ja": "ただいま！",
+    "context": "帰宅したときの第一声。",
+    "exEn": "\"I'm home! Where are you?\"",
+    "exJa": "ただいま！どこにいる？"
   },
   {
-    tag: "Gratitude",
-    en: "You saved my life.",
-    ja: "本当に助かりました。",
-    context: "大きく助けられたときの大げさだが自然な感謝表現。",
-    exEn: '"You found my keys? You saved my life!"',
-    exJa: "鍵見つけてくれたの？本当に助かった！"
+    "tag": "Home",
+    "en": "Have a good day at work.",
+    "ja": "仕事頑張ってね。",
+    "context": "送り出すときの定番のひとこと。",
+    "exEn": "\"Have a good day at work. See you tonight.\"",
+    "exJa": "仕事頑張ってね。じゃあ今夜。"
   },
   {
-    tag: "Compliment",
-    en: "That suits you.",
-    ja: "よく似合っていますね。",
-    context: "服装や髪型などをほめるときの表現。",
-    exEn: '"Nice jacket — that really suits you."',
-    exJa: "いいジャケットだね、すごく似合ってるよ。"
+    "tag": "Home",
+    "en": "Drive safely.",
+    "ja": "気をつけて運転してね。",
+    "context": "車で出かける相手を気遣う表現。",
+    "exEn": "\"It's raining. Drive safely, okay?\"",
+    "exJa": "雨だね。気をつけて運転してね。"
   },
   {
-    tag: "Compliment",
-    en: "I'm impressed.",
-    ja: "感心しました。",
-    context: "相手の成果や能力に感心したときのひとこと。",
-    exEn: '"You finished it already? I\'m impressed."',
-    exJa: "もう終わったの？感心しちゃった。"
+    "tag": "Home",
+    "en": "See you tonight.",
+    "ja": "じゃあ今夜ね。",
+    "context": "日中の別れ際に再会を約束する表現。",
+    "exEn": "\"Gotta run. See you tonight.\"",
+    "exJa": "もう行かなきゃ。じゃあ今夜ね。"
   },
   {
-    tag: "Reaction",
-    en: "That's too bad.",
-    ja: "それは残念ですね。",
-    context: "相手の残念な知らせに同情を示すときの表現。",
-    exEn: '"You missed the train? That\'s too bad."',
-    exJa: "電車に乗り遅れたの？それは残念だったね。"
+    "tag": "Tease",
+    "en": "You're such a goofball.",
+    "ja": "もう、おバカさんだなあ。",
+    "context": "相手のおちゃめさを愛情を込めてからかう表現。",
+    "exEn": "\"Haha, you're such a goofball.\"",
+    "exJa": "ははっ、もう、おバカさんだなあ。"
   },
   {
-    tag: "Reaction",
-    en: "Sounds good to me.",
-    ja: "いいですね、賛成です。",
-    context: "提案に乗り気で同意するときのカジュアルな表現。",
-    exEn: '"Dinner at seven? Sounds good to me."',
-    exJa: "7時に夕食？いいね、賛成。"
+    "tag": "Tease",
+    "en": "Stop it, you're making me blush.",
+    "ja": "もう、照れちゃうじゃん。",
+    "context": "ほめられて照れたときの可愛い返し。",
+    "exEn": "\"Stop it, you're making me blush.\"",
+    "exJa": "もう、やめてよ。照れちゃうじゃん。"
   },
   {
-    tag: "Reaction",
-    en: "I can't believe it.",
-    ja: "信じられない。",
-    context: "驚きや感動を表すときの定番表現。良い意味でも悪い意味でも。",
-    exEn: '"We won? I can\'t believe it!"',
-    exJa: "勝ったの？信じられない！"
+    "tag": "Tease",
+    "en": "You're impossible, you know that?",
+    "ja": "君って本当にしょうがないなあ。",
+    "context": "あきれつつも愛情のこもった軽口。",
+    "exEn": "\"You're impossible, you know that? But I love you.\"",
+    "exJa": "君って本当にしょうがないなあ。でも大好き。"
   },
   {
-    tag: "Opinion",
-    en: "It depends.",
-    ja: "場合によります。",
-    context: "状況次第で答えが変わるときの便利なひとこと。",
-    exEn: '"Will you come? It depends on the weather."',
-    exJa: "来る？天気次第かな。"
+    "tag": "Decide",
+    "en": "What do you think we should do?",
+    "ja": "どうしたらいいと思う？",
+    "context": "二人で決めたいときに相手の意見を求める表現。",
+    "exEn": "\"What do you think we should do about it?\"",
+    "exJa": "この件、どうしたらいいと思う？"
   },
   {
-    tag: "Opinion",
-    en: "If you ask me,",
-    ja: "私に言わせれば、",
-    context: "自分の意見を強調して述べる前置き表現。",
-    exEn: '"If you ask me, we should wait a bit longer."',
-    exJa: "私に言わせれば、もう少し待つべきだと思う。"
+    "tag": "Decide",
+    "en": "It's up to you.",
+    "ja": "君に任せるよ。",
+    "context": "相手の希望を優先するときの表現。",
+    "exEn": "\"I'm fine with anything. It's up to you.\"",
+    "exJa": "私はなんでもいいよ。君に任せる。"
   },
   {
-    tag: "Opinion",
-    en: "I see what you mean.",
-    ja: "言いたいことは分かります。",
-    context: "相手の主張を理解したと示す表現。同意とは限らない。",
-    exEn: '"I see what you mean, but I still have doubts."',
-    exJa: "言いたいことは分かるけど、まだ疑問は残るな。"
+    "tag": "Decide",
+    "en": "Whatever makes you happy.",
+    "ja": "君が幸せならそれでいいよ。",
+    "context": "相手の幸せを第一に考える優しい表現。",
+    "exEn": "\"Whatever makes you happy, I'm in.\"",
+    "exJa": "君が幸せならそれでいいよ、付き合うよ。"
   },
   {
-    tag: "Discuss",
-    en: "Let's agree to disagree.",
-    ja: "見解の相違ということにしましょう。",
-    context: "意見が合わないとき、対立を平和的に収める表現。",
-    exEn: '"We won\'t settle this — let\'s agree to disagree."',
-    exJa: "これは決着しないね、見解の相違ということにしよう。"
+    "tag": "Decide",
+    "en": "Let's decide together.",
+    "ja": "一緒に決めよう。",
+    "context": "二人で話し合って決めたいときの表現。",
+    "exEn": "\"This is big. Let's decide together.\"",
+    "exJa": "大事なことだから、一緒に決めよう。"
   },
   {
-    tag: "Discuss",
-    en: "Let me put it this way.",
-    ja: "こう言い換えましょう。",
-    context: "別の言い方で説明し直すときの前置き。",
-    exEn: '"Let me put it this way: it\'s not worth the risk."',
-    exJa: "こう言い換えるね、それはリスクに見合わないってこと。"
+    "tag": "Checkin",
+    "en": "Did you eat yet?",
+    "ja": "もうご飯食べた？",
+    "context": "相手の食事を気遣う日常的なひとこと。",
+    "exEn": "\"It's late. Did you eat yet?\"",
+    "exJa": "もう遅いよ。ご飯食べた？"
   },
   {
-    tag: "Agree",
-    en: "You can say that again.",
-    ja: "まったくその通り。",
-    context: "強く同意するときの口語表現。文字通りの意味ではない。",
-    exEn: '"It\'s so hot today." "You can say that again!"',
-    exJa: "「今日は暑いね」「まったくその通り！」"
+    "tag": "Checkin",
+    "en": "Have you taken your medicine?",
+    "ja": "薬ちゃんと飲んだ？",
+    "context": "体調を気遣って薬の確認をする表現。",
+    "exEn": "\"Have you taken your medicine today?\"",
+    "exJa": "今日、薬ちゃんと飲んだ？"
   },
   {
-    tag: "Agree",
-    en: "Exactly my thoughts.",
-    ja: "まさに同じ考えです。",
-    context: "相手と全く同じ意見だと示すときの表現。",
-    exEn: '"We should leave early." "Exactly my thoughts."',
-    exJa: "「早めに出よう」「まさに同じこと考えてた」"
+    "tag": "Checkin",
+    "en": "Don't forget your umbrella.",
+    "ja": "傘忘れないでね。",
+    "context": "出かける相手への気遣いのひとこと。",
+    "exEn": "\"It might rain. Don't forget your umbrella.\"",
+    "exJa": "雨降るかも。傘忘れないでね。"
   },
   {
-    tag: "Social",
-    en: "Let's catch up soon.",
-    ja: "近いうちに会って話そう。",
-    context: "しばらく会っていない人に再会を促すカジュアルな表現。",
-    exEn: '"It\'s been ages! Let\'s catch up soon."',
-    exJa: "すごく久しぶり！近いうちにゆっくり話そうよ。"
+    "tag": "Checkin",
+    "en": "Get home safe.",
+    "ja": "気をつけて帰ってね。",
+    "context": "別れ際に相手の帰宅を気遣う表現。",
+    "exEn": "\"It's late. Get home safe, okay?\"",
+    "exJa": "もう遅いから、気をつけて帰ってね。"
   },
   {
-    tag: "Social",
-    en: "Make yourself at home.",
-    ja: "くつろいでくださいね。",
-    context: "家に招いた相手に気楽に過ごしてと伝える定番表現。",
-    exEn: '"Come in, come in. Make yourself at home."',
-    exJa: "どうぞ入って。くつろいでね。"
+    "tag": "Together",
+    "en": "Let's watch a movie.",
+    "ja": "映画でも観よう。",
+    "context": "二人でゆっくり過ごそうと誘う表現。",
+    "exEn": "\"Let's watch a movie and relax.\"",
+    "exJa": "映画でも観てのんびりしよう。"
   },
   {
-    tag: "Social",
-    en: "Say hi to your family.",
-    ja: "ご家族によろしくね。",
-    context: "別れ際に相手の家族への挨拶を託すときのひとこと。",
-    exEn: '"Take care, and say hi to your family for me."',
-    exJa: "元気でね。ご家族にもよろしく伝えて。"
+    "tag": "Together",
+    "en": "Put your phone down for a bit.",
+    "ja": "ちょっとスマホ置いてよ。",
+    "context": "一緒の時間を大切にしたいときの軽いお願い。",
+    "exEn": "\"Hey, put your phone down for a bit. Talk to me.\"",
+    "exJa": "ねえ、ちょっとスマホ置いてよ。話そう。"
   },
   {
-    tag: "Motivation",
-    en: "Don't give up.",
-    ja: "あきらめないで。",
-    context: "落ち込んでいる相手を励ますときの定番表現。",
-    exEn: '"You\'re almost there. Don\'t give up!"',
-    exJa: "もうすぐだよ。あきらめないで！"
+    "tag": "Together",
+    "en": "Let's just relax tonight.",
+    "ja": "今夜はのんびりしよう。",
+    "context": "予定を入れずゆっくり過ごそうと提案する表現。",
+    "exEn": "\"No plans. Let's just relax tonight.\"",
+    "exJa": "予定なし。今夜はのんびりしよう。"
   },
   {
-    tag: "Motivation",
-    en: "You've got this.",
-    ja: "君ならできるよ。",
-    context: "挑戦する相手を力強く後押しするカジュアルな表現。",
-    exEn: '"Big day tomorrow? You\'ve got this!"',
-    exJa: "明日は大事な日でしょ？君ならできるよ！"
-  },
-  {
-    tag: "Motivation",
-    en: "Better late than never.",
-    ja: "遅くてもやらないよりはまし。",
-    context: "遅れたことを前向きにとらえる定番のことわざ的表現。",
-    exEn: '"I finally started exercising — better late than never."',
-    exJa: "ようやく運動を始めたよ。遅くてもやらないよりまし。"
-  },
-  {
-    tag: "Idiom",
-    en: "It's a piece of cake.",
-    ja: "そんなの朝飯前だよ。",
-    context: "とても簡単であることを表すイディオム。",
-    exEn: '"Don\'t worry, the test is a piece of cake."',
-    exJa: "心配しないで、あのテストは朝飯前だよ。"
-  },
-  {
-    tag: "Idiom",
-    en: "Break a leg!",
-    ja: "頑張って！（成功を祈る）",
-    context: "舞台や発表などの前に幸運を祈る言い回し。直訳とは逆の意味。",
-    exEn: '"Your presentation is today? Break a leg!"',
-    exJa: "今日プレゼンなの？頑張ってね！"
-  },
-  {
-    tag: "Idiom",
-    en: "It's not rocket science.",
-    ja: "そんなに難しいことじゃない。",
-    context: "難しくないと強調するときのカジュアルな表現。",
-    exEn: '"Just follow the steps — it\'s not rocket science."',
-    exJa: "手順通りにやればいいだけ。難しいことじゃないよ。"
-  },
-  {
-    tag: "Idiom",
-    en: "Let's call it a day.",
-    ja: "今日はこの辺にしましょう。",
-    context: "作業を切り上げて終わりにするときの定番表現。",
-    exEn: '"We\'ve done enough. Let\'s call it a day."',
-    exJa: "十分やったね。今日はこの辺にしよう。"
-  },
-  {
-    tag: "Idiom",
-    en: "Hang in there.",
-    ja: "踏ん張って、頑張って。",
-    context: "つらい状況にある相手を励ますカジュアルな表現。",
-    exEn: '"I know it\'s tough. Hang in there!"',
-    exJa: "大変なのは分かるよ。踏ん張って！"
-  },
-  {
-    tag: "Phrasal",
-    en: "I'm looking forward to it.",
-    ja: "楽しみにしています。",
-    context: "予定を楽しみにしている気持ちを伝える定番表現。",
-    exEn: '"The trip is next week — I\'m looking forward to it."',
-    exJa: "旅行は来週なんだ、楽しみにしてるよ。"
-  },
-  {
-    tag: "Phrasal",
-    en: "Let's figure it out.",
-    ja: "なんとか解決しよう。",
-    context: "問題を一緒に考えて解決しようと促すときの表現。",
-    exEn: '"We have a problem, but let\'s figure it out together."',
-    exJa: "問題はあるけど、一緒になんとかしよう。"
-  },
-  {
-    tag: "Phrasal",
-    en: "Don't make fun of me.",
-    ja: "からかわないでよ。",
-    context: "冗談半分でいじられたときに軽く返すときの表現。",
-    exEn: '"Hey, don\'t make fun of my accent!"',
-    exJa: "ちょっと、私のなまりをからかわないで！"
-  },
-  {
-    tag: "Slang",
-    en: "No worries.",
-    ja: "気にしないで、大丈夫だよ。",
-    context: "お礼や謝罪への気軽な返し。\"You're welcome.\" のカジュアル版。",
-    exEn: '"Thanks for waiting!" "No worries."',
-    exJa: "「待たせてごめん！」「気にしないで」"
-  },
-  {
-    tag: "Slang",
-    en: "Sounds like a plan.",
-    ja: "いいね、そうしよう。",
-    context: "提案に乗るときの軽い同意表現。予定が決まった感じを出す。",
-    exEn: '"Let\'s meet at noon." "Sounds like a plan."',
-    exJa: "「正午に会おう」「いいね、そうしよう」"
-  },
-  {
-    tag: "Slang",
-    en: "My bad.",
-    ja: "ごめん、私のミス。",
-    context: "軽い失敗をカジュアルに謝るときの口語表現。",
-    exEn: '"You took my cup?" "Oh, my bad!"',
-    exJa: "「私のカップ取った？」「あっ、ごめん！」"
-  },
+    "tag": "Together",
+    "en": "I love spending time with you.",
+    "ja": "君と過ごす時間が大好き。",
+    "context": "一緒の時間の幸せを伝える表現。",
+    "exEn": "\"Honestly, I love spending time with you.\"",
+    "exJa": "正直、君と過ごす時間が大好きなんだ。"
+  },
+  {
+    "tag": "Support",
+    "en": "Talk to me. What's wrong?",
+    "ja": "話して、どうしたの？",
+    "context": "落ち込んでいる相手に寄り添って尋ねる表現。",
+    "exEn": "\"You seem down. Talk to me. What's wrong?\"",
+    "exJa": "元気ないね。話して、どうしたの？"
+  },
+  {
+    "tag": "Support",
+    "en": "It's okay to cry.",
+    "ja": "泣いてもいいんだよ。",
+    "context": "つらい相手の気持ちを受け止める表現。",
+    "exEn": "\"Come here. It's okay to cry.\"",
+    "exJa": "おいで。泣いてもいいんだよ。"
+  },
+  {
+    "tag": "Support",
+    "en": "I'll always listen.",
+    "ja": "いつでも話を聞くよ。",
+    "context": "いつでも味方として聞くと伝える表現。",
+    "exEn": "\"Whenever you need to talk, I'll always listen.\"",
+    "exJa": "話したいときはいつでも、ちゃんと聞くよ。"
+  },
+  {
+    "tag": "Conflict",
+    "en": "Let's calm down for a second.",
+    "ja": "ちょっと落ち着こう。",
+    "context": "口論が熱くなったときに一旦冷静になろうと促す表現。",
+    "exEn": "\"Let's calm down for a second and talk.\"",
+    "exJa": "ちょっと落ち着いて、話そう。"
+  },
+  {
+    "tag": "Conflict",
+    "en": "I see your point.",
+    "ja": "君の言いたいことは分かるよ。",
+    "context": "相手の意見を受け止める歩み寄りの表現。",
+    "exEn": "\"Okay, I see your point.\"",
+    "exJa": "うん、君の言いたいことは分かるよ。"
+  },
+  {
+    "tag": "Conflict",
+    "en": "Let's meet in the middle.",
+    "ja": "お互い歩み寄ろう。",
+    "context": "妥協点を探そうと提案する表現。",
+    "exEn": "\"Neither of us is totally right. Let's meet in the middle.\"",
+    "exJa": "どっちも完全には正しくないよ。お互い歩み寄ろう。"
+  },
+  {
+    "tag": "Everyday",
+    "en": "Can you turn off the light?",
+    "ja": "電気消してくれる？",
+    "context": "寝る前などのちょっとしたお願い。",
+    "exEn": "\"I'm in bed. Can you turn off the light?\"",
+    "exJa": "もうベッドにいるの。電気消してくれる？"
+  },
+  {
+    "tag": "Everyday",
+    "en": "Scoot over a little.",
+    "ja": "ちょっと詰めて。",
+    "context": "ソファやベッドで場所を空けてほしいときの表現。",
+    "exEn": "\"Scoot over a little, I want to sit.\"",
+    "exJa": "ちょっと詰めて、座りたい。"
+  },
+  {
+    "tag": "Everyday",
+    "en": "Did you lock the door?",
+    "ja": "鍵かけた？",
+    "context": "就寝前や外出時の確認の定番。",
+    "exEn": "\"Before bed — did you lock the door?\"",
+    "exJa": "寝る前に、鍵かけた？"
+  },
+  {
+    "tag": "Everyday",
+    "en": "Wake me up at seven.",
+    "ja": "7時に起こして。",
+    "context": "起こしてほしい時間を頼むときの表現。",
+    "exEn": "\"I have an early start. Wake me up at seven.\"",
+    "exJa": "明日早いんだ。7時に起こして。"
+  },
+  {
+    "tag": "Affection",
+    "en": "I love you more.",
+    "ja": "私の方がもっと好き。",
+    "context": "「愛してる」への可愛い返しの定番。",
+    "exEn": "\"I love you.\" \"I love you more.\"",
+    "exJa": "「愛してる」「私の方がもっと好き」"
+  },
+  {
+    "tag": "Affection",
+    "en": "You're my favorite person.",
+    "ja": "君が一番大事な人だよ。",
+    "context": "相手が誰よりも特別だと伝える表現。",
+    "exEn": "\"You know you're my favorite person, right?\"",
+    "exJa": "君が一番大事な人だって、分かってるよね？"
+  }
 ];
 
 // Spaced-repetition schedule: introduce each phrase once, then weave in
