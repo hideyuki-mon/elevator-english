@@ -294,18 +294,18 @@
 
 <div class="card" id="card" aria-live="polite">
   <div class="phrase-num" id="phraseNum"><span id="phraseNumText">Phrase #001 / 100</span><span class="review-badge" id="reviewBadge">復習</span></div>
-  <div class="tag" id="tag">Morning</div>
+  <div class="tag" id="tag">Synonym</div>
 
-  <h1 class="phrase-en" id="phraseEn" lang="en">Time to wake up!</h1>
-  <div class="phrase-ja" id="phraseJa">起きる時間だよ！</div>
+  <h1 class="phrase-en" id="phraseEn" lang="en">affect vs. effect</h1>
+  <div class="phrase-ja" id="phraseJa">影響を与える／影響（結果）</div>
 
   <div class="context-box">
-    <div class="context-label">シーン</div>
-    <div class="context-text" id="context">朝、家族を起こすときの定番の声かけ。</div>
+    <div class="context-label">出題ポイント</div>
+    <div class="context-text" id="context">affectは動詞「〜に影響する」、effectは名詞「影響・効果」。品詞の違いがCASEC語彙問題の定番の狙い目。</div>
   </div>
 
-  <div class="example-en" id="exampleEn" lang="en">"Time to wake up! Breakfast is ready."</div>
-  <div class="example-ja" id="exampleJa">起きる時間だよ！朝ごはんできてるよ。</div>
+  <div class="example-en" id="exampleEn" lang="en">"The delay will affect our schedule." / "The effect was immediate."</div>
+  <div class="example-ja" id="exampleJa">「その遅れはスケジュールに影響する」／「効果はすぐに現れた」</div>
 
   <div class="bottom-row">
     <div class="date-display" id="dateDisplay"></div>
@@ -320,804 +320,804 @@
 <script>
 const phrases = [
   {
-    "tag": "Morning",
-    "en": "Time to wake up!",
-    "ja": "起きる時間だよ！",
-    "context": "朝、家族を起こすときの定番の声かけ。",
-    "exEn": "\"Time to wake up! Breakfast is ready.\"",
-    "exJa": "起きる時間だよ！朝ごはんできてるよ。"
-  },
-  {
-    "tag": "Morning",
-    "en": "Rise and shine!",
-    "ja": "さあ、起きて！",
-    "context": "明るく元気に起こすときの決まり文句。",
-    "exEn": "\"Rise and shine, it's a beautiful day!\"",
-    "exJa": "さあ起きて、いい天気だよ！"
-  },
-  {
-    "tag": "Morning",
-    "en": "Did you sleep okay?",
-    "ja": "よく眠れた？",
-    "context": "起きた家族への朝のひとこと。",
-    "exEn": "\"Morning. Did you sleep okay?\"",
-    "exJa": "おはよう。よく眠れた？"
-  },
-  {
-    "tag": "Breakfast",
-    "en": "Breakfast is ready!",
-    "ja": "朝ごはんできたよ！",
-    "context": "食卓に呼ぶときの定番表現。",
-    "exEn": "\"Breakfast is ready! Come and eat.\"",
-    "exJa": "朝ごはんできたよ！食べにおいで。"
-  },
-  {
-    "tag": "Breakfast",
-    "en": "Eat up, or you'll be late.",
-    "ja": "早く食べないと遅刻するよ。",
-    "context": "登校・出勤前に急かすときの表現。",
-    "exEn": "\"Eat up, or you'll be late for school.\"",
-    "exJa": "早く食べないと学校に遅れるよ。"
-  },
-  {
-    "tag": "School",
-    "en": "Don't forget your backpack.",
-    "ja": "カバン忘れないでね。",
-    "context": "登校時の持ち物を確認する声かけ。",
-    "exEn": "\"Don't forget your backpack and lunch.\"",
-    "exJa": "カバンとお弁当忘れないでね。"
-  },
-  {
-    "tag": "School",
-    "en": "Have a good day at school.",
-    "ja": "学校楽しんでね。",
-    "context": "子どもを送り出すときの定番。",
-    "exEn": "\"Have a good day at school, sweetie!\"",
-    "exJa": "学校楽しんでね！"
-  },
-  {
-    "tag": "School",
-    "en": "How was school today?",
-    "ja": "今日学校どうだった？",
-    "context": "帰宅後に一日を尋ねる会話。",
-    "exEn": "\"Welcome home! How was school today?\"",
-    "exJa": "おかえり！今日学校どうだった？"
-  },
-  {
-    "tag": "School",
-    "en": "Did you have fun at school?",
-    "ja": "学校楽しかった？",
-    "context": "子どもに楽しかったか尋ねる表現。",
-    "exEn": "\"Did you have fun at school today?\"",
-    "exJa": "今日学校楽しかった？"
-  },
-  {
-    "tag": "Homework",
-    "en": "Have you finished your homework?",
-    "ja": "宿題終わった？",
-    "context": "宿題の進み具合を確認する定番。",
-    "exEn": "\"Have you finished your homework yet?\"",
-    "exJa": "もう宿題終わった？"
-  },
-  {
-    "tag": "Homework",
-    "en": "Do your homework first.",
-    "ja": "先に宿題やりなさい。",
-    "context": "遊ぶ前に宿題をするよう促す表現。",
-    "exEn": "\"Do your homework first, then you can play.\"",
-    "exJa": "先に宿題やりなさい、それから遊んでいいよ。"
-  },
-  {
-    "tag": "Homework",
-    "en": "Do you need help with that?",
-    "ja": "それ、手伝おうか？",
-    "context": "勉強で困っている子に声をかける表現。",
-    "exEn": "\"That looks tricky. Do you need help with that?\"",
-    "exJa": "難しそうだね。それ、手伝おうか？"
-  },
-  {
-    "tag": "Manners",
-    "en": "Wash your hands first.",
-    "ja": "先に手を洗ってね。",
-    "context": "食事前などに手洗いを促す表現。",
-    "exEn": "\"Wash your hands first, then we eat.\"",
-    "exJa": "先に手を洗って、それから食べようね。"
+    "tag": "Synonym",
+    "en": "affect vs. effect",
+    "ja": "影響を与える／影響（結果）",
+    "context": "affectは動詞「〜に影響する」、effectは名詞「影響・効果」。品詞の違いがCASEC語彙問題の定番の狙い目。",
+    "exEn": "\"The delay will affect our schedule.\" / \"The effect was immediate.\"",
+    "exJa": "「その遅れはスケジュールに影響する」／「効果はすぐに現れた」"
+  },
+  {
+    "tag": "Synonym",
+    "en": "borrow vs. lend",
+    "ja": "借りる／貸す",
+    "context": "borrowは「（人から）借りる」、lendは「（人に）貸す」で方向が逆。混同しやすいペア。",
+    "exEn": "\"Can I borrow your pen?\" \"Sure, I'll lend it to you.\"",
+    "exJa": "「ペン借りていい？」「いいよ、貸すね」"
+  },
+  {
+    "tag": "Synonym",
+    "en": "few vs. a few",
+    "ja": "ほとんどない／少しはある",
+    "context": "fewは否定的に「ほとんどない」、a fewは肯定的に「少しある」。可算名詞に使う。",
+    "exEn": "\"Few people came.\" vs. \"A few people came.\"",
+    "exJa": "「ほとんど人が来なかった」対「数人は来た」"
+  },
+  {
+    "tag": "Synonym",
+    "en": "little vs. a little",
+    "ja": "ほとんどない／少しはある",
+    "context": "fewとa fewの不可算名詞版。littleは否定的、a littleは肯定的なニュアンス。",
+    "exEn": "\"I have little time.\" vs. \"I have a little time.\"",
+    "exJa": "「時間がほとんどない」対「少し時間がある」"
+  },
+  {
+    "tag": "Synonym",
+    "en": "comprise vs. compose",
+    "ja": "〜から成る／〜を構成する",
+    "context": "「全体 comprise 部分」、「部分 compose 全体」の語順が逆。be comprised ofは口語で使われるが本来は誤用とされる点も出題される。",
+    "exEn": "\"The committee comprises ten members.\"",
+    "exJa": "「その委員会は10人のメンバーから成る」"
+  },
+  {
+    "tag": "Synonym",
+    "en": "raise vs. rise",
+    "ja": "〜を上げる（他動詞）／上がる（自動詞）",
+    "context": "raiseは目的語を取る他動詞、riseは目的語を取らない自動詞。この対比は語法問題の定番。",
+    "exEn": "\"Prices rose sharply.\" / \"They raised the price.\"",
+    "exJa": "「価格が急上昇した」／「彼らは価格を上げた」"
+  },
+  {
+    "tag": "Synonym",
+    "en": "economic vs. economical",
+    "ja": "経済の／経済的な・節約になる",
+    "context": "economicは「経済（学）の」、economicalは「無駄がない・お得な」という意味。形容詞の使い分け頻出。",
+    "exEn": "\"an economic policy\" vs. \"an economical car\"",
+    "exJa": "「経済政策」対「燃費のいい（お得な）車」"
+  },
+  {
+    "tag": "Synonym",
+    "en": "sensible vs. sensitive",
+    "ja": "分別のある／敏感な",
+    "context": "sensibleは「賢明な・理にかなった」、sensitiveは「敏感な・繊細な」。スペルが似ていて誤答を誘う典型例。",
+    "exEn": "\"a sensible decision\" vs. \"a sensitive topic\"",
+    "exJa": "「賢明な決断」対「デリケートな話題」"
+  },
+  {
+    "tag": "Synonym",
+    "en": "look at vs. see vs. watch",
+    "ja": "注視する／見える／動くものを見る",
+    "context": "look atは意識的に見る、seeは自然に目に入る、watchは動きのあるものを注視する。使い分けが問われる。",
+    "exEn": "\"I saw him watching TV when I looked at the door.\"",
+    "exJa": "「ドアを見たとき、彼がテレビを見ているのが見えた」"
+  },
+  {
+    "tag": "Synonym",
+    "en": "say vs. tell vs. speak vs. talk",
+    "ja": "言う（目的語なし）／伝える（人が目的語）／話す（言語）／話す（会話）",
+    "context": "tell人 that...の型、say that...の型など、目的語の取り方の違いが語法問題で狙われる。",
+    "exEn": "\"He told me that he speaks French.\"",
+    "exJa": "「彼はフランス語を話すと私に言った」"
+  },
+  {
+    "tag": "Vocab",
+    "en": "consequently",
+    "ja": "その結果として",
+    "context": "原因→結果をつなぐ副詞。CASEC表現問題やリスニング大意で論理関係を把握する鍵となる語。",
+    "exEn": "\"It rained heavily. Consequently, the game was canceled.\"",
+    "exJa": "「大雨が降った。その結果、試合は中止になった」"
+  },
+  {
+    "tag": "Vocab",
+    "en": "nevertheless",
+    "ja": "それにもかかわらず",
+    "context": "逆接を表すフォーマルな接続副詞。文と文の論理関係を問う問題で頻出。",
+    "exEn": "\"The plan was risky. Nevertheless, they went ahead.\"",
+    "exJa": "「その計画は危険だった。それにもかかわらず彼らは実行した」"
+  },
+  {
+    "tag": "Vocab",
+    "en": "furthermore",
+    "ja": "さらに、その上",
+    "context": "情報を追加する接続副詞。moreover、in additionと同義でCASEC読解・リスニングの論理マーカーとして重要。",
+    "exEn": "\"The hotel is cheap. Furthermore, it's close to the station.\"",
+    "exJa": "「そのホテルは安い。その上、駅からも近い」"
   },
   {
-    "tag": "Manners",
-    "en": "Brush your teeth.",
-    "ja": "歯を磨いてね。",
-    "context": "歯磨きを促す毎日の声かけ。",
-    "exEn": "\"Brush your teeth before bed.\"",
-    "exJa": "寝る前に歯を磨いてね。"
+    "tag": "Vocab",
+    "en": "reluctant",
+    "ja": "気が進まない、しぶしぶの",
+    "context": "be reluctant to doの形でよく出る。willingの対義語として語彙問題で狙われる。",
+    "exEn": "\"She was reluctant to accept the offer.\"",
+    "exJa": "「彼女はその申し出を受け入れるのに気が進まなかった」"
   },
   {
-    "tag": "Manners",
-    "en": "Say please and thank you.",
-    "ja": "「お願い」と「ありがとう」を言おうね。",
-    "context": "礼儀を教えるときのひとこと。",
-    "exEn": "\"Remember to say please and thank you.\"",
-    "exJa": "「お願い」と「ありがとう」を忘れずにね。"
+    "tag": "Vocab",
+    "en": "postpone",
+    "ja": "延期する",
+    "context": "put off と同義。ビジネス会話・アナウンスのリスニング問題で頻出の語。",
+    "exEn": "\"The meeting has been postponed until next week.\"",
+    "exJa": "「会議は来週まで延期された」"
   },
   {
-    "tag": "Manners",
-    "en": "Don't talk with your mouth full.",
-    "ja": "口に食べ物を入れたまま喋らないで。",
-    "context": "食事マナーを教える表現。",
-    "exEn": "\"Don't talk with your mouth full, honey.\"",
-    "exJa": "口に食べ物を入れたまま喋らないでね。"
+    "tag": "Vocab",
+    "en": "reimburse",
+    "ja": "（費用を）払い戻す",
+    "context": "ビジネス語彙。経費精算の文脈でCASECのオフィス系リスニングによく登場する。",
+    "exEn": "\"The company will reimburse your travel expenses.\"",
+    "exJa": "「会社が出張費を払い戻します」"
   },
   {
-    "tag": "Manners",
-    "en": "Clean up your toys.",
-    "ja": "おもちゃを片付けてね。",
-    "context": "片付けを促す定番の声かけ。",
-    "exEn": "\"Please clean up your toys before dinner.\"",
-    "exJa": "ご飯の前におもちゃを片付けてね。"
+    "tag": "Vocab",
+    "en": "inventory",
+    "ja": "在庫、棚卸し",
+    "context": "ビジネス頻出語。stockとほぼ同義だが、より正式な文脈で使われる。",
+    "exEn": "\"We need to check the inventory before ordering more.\"",
+    "exJa": "「追加発注の前に在庫を確認する必要がある」"
   },
   {
-    "tag": "Meals",
-    "en": "Dinner's ready!",
-    "ja": "ご飯できたよ！",
-    "context": "夕食に呼ぶときの定番表現。",
-    "exEn": "\"Dinner's ready! Wash your hands.\"",
-    "exJa": "ご飯できたよ！手を洗ってね。"
+    "tag": "Vocab",
+    "en": "candidate",
+    "ja": "候補者",
+    "context": "採用・選挙関連のリスニング・読解で頻出。応募者applicantとほぼ同義で使われることも。",
+    "exEn": "\"Three candidates applied for the position.\"",
+    "exJa": "「その職に3人の候補者が応募した」"
   },
   {
-    "tag": "Meals",
-    "en": "Come to the table.",
-    "ja": "食卓においで。",
-    "context": "食事に集まるよう促す表現。",
-    "exEn": "\"Everyone, come to the table.\"",
-    "exJa": "みんな、食卓においで。"
+    "tag": "Vocab",
+    "en": "prevalent",
+    "ja": "広く行き渡っている、普及している",
+    "context": "common、widespreadと同義のやや硬い語。語彙問題の難易度が上がると出やすい。",
+    "exEn": "\"Smartphones have become prevalent worldwide.\"",
+    "exJa": "「スマートフォンは世界中で普及している」"
   },
   {
-    "tag": "Meals",
-    "en": "Eat your vegetables.",
-    "ja": "野菜も食べてね。",
-    "context": "好き嫌いをする子への定番の声かけ。",
-    "exEn": "\"Eat your vegetables, they're good for you.\"",
-    "exJa": "野菜も食べてね、体にいいんだよ。"
+    "tag": "Vocab",
+    "en": "meticulous",
+    "ja": "几帳面な、細部にこだわる",
+    "context": "carefulの上位語。人物描写の語彙問題で使われる。",
+    "exEn": "\"She is meticulous about every detail in her work.\"",
+    "exJa": "「彼女は仕事のあらゆる細部に几帳面だ」"
   },
   {
-    "tag": "Meals",
-    "en": "Would you like some more?",
-    "ja": "もう少し食べる？",
-    "context": "おかわりを勧めるときの表現。",
-    "exEn": "\"That was fast! Would you like some more?\"",
-    "exJa": "早かったね！もう少し食べる？"
+    "tag": "Grammar",
+    "en": "not only ... but also ...",
+    "ja": "〜だけでなく〜も",
+    "context": "相関接続詞。CASEC表現問題では並列される語の品詞を揃える点がよく問われる。",
+    "exEn": "\"She is not only smart but also hardworking.\"",
+    "exJa": "「彼女は頭がいいだけでなく努力家でもある」"
   },
   {
-    "tag": "Meals",
-    "en": "Take your plate to the sink.",
-    "ja": "お皿を流しに持っていってね。",
-    "context": "食後の片付けを促す表現。",
-    "exEn": "\"When you're done, take your plate to the sink.\"",
-    "exJa": "食べ終わったら、お皿を流しに持っていってね。"
+    "tag": "Grammar",
+    "en": "so ... that ...",
+    "ja": "とても〜なので〜だ",
+    "context": "程度と結果を表す構文。such...that...との使い分け（so+形容詞/副詞、such+名詞）が定番の狙い目。",
+    "exEn": "\"It was so cold that we stayed inside.\"",
+    "exJa": "「とても寒かったので、私たちは中にいた」"
   },
   {
-    "tag": "Chores",
-    "en": "Can you set the table?",
-    "ja": "食卓の準備してくれる？",
-    "context": "食事の準備を手伝ってもらう表現。",
-    "exEn": "\"Dinner's almost ready. Can you set the table?\"",
-    "exJa": "ご飯もうすぐだよ。食卓の準備してくれる？"
+    "tag": "Grammar",
+    "en": "as long as ...",
+    "ja": "〜する限り、〜さえすれば",
+    "context": "条件を表す接続詞。provided thatと同義。ビジネス条件交渉の文脈でも頻出。",
+    "exEn": "\"You can stay as long as you like.\"",
+    "exJa": "「好きなだけ滞在していいですよ」"
   },
   {
-    "tag": "Chores",
-    "en": "It's your turn to do the dishes.",
-    "ja": "お皿洗いは君の番だよ。",
-    "context": "家事の分担を伝える表現。",
-    "exEn": "\"It's your turn to do the dishes tonight.\"",
-    "exJa": "今夜のお皿洗いは君の番だよ。"
+    "tag": "Grammar",
+    "en": "in case ...",
+    "ja": "〜する場合に備えて",
+    "context": "「〜した場合」ではなく「〜に備えて」という予防の意味。if とのニュアンスの違いが問われる。",
+    "exEn": "\"Take an umbrella in case it rains.\"",
+    "exJa": "「雨が降る場合に備えて傘を持って行きなさい」"
   },
   {
-    "tag": "Chores",
-    "en": "Help me fold the laundry.",
-    "ja": "洗濯物たたむの手伝って。",
-    "context": "家事の手伝いを頼む表現。",
-    "exEn": "\"Can you help me fold the laundry?\"",
-    "exJa": "洗濯物たたむの手伝ってくれる？"
+    "tag": "Grammar",
+    "en": "used to do vs. be used to doing",
+    "ja": "以前は〜したものだ／〜に慣れている",
+    "context": "used to + 原形は過去の習慣、be used to + 動名詞は「慣れている」。形の違いが混同されやすい頻出項目。",
+    "exEn": "\"I used to live there.\" / \"I'm used to living alone.\"",
+    "exJa": "「以前そこに住んでいた」／「一人暮らしに慣れている」"
   },
   {
-    "tag": "Chores",
-    "en": "Make your bed, please.",
-    "ja": "ベッドを整えてね。",
-    "context": "身の回りの整頓を促す表現。",
-    "exEn": "\"Make your bed, please, before you go.\"",
-    "exJa": "出かける前にベッドを整えてね。"
+    "tag": "Grammar",
+    "en": "would rather ... than ...",
+    "ja": "〜するよりむしろ〜したい",
+    "context": "prefer to ... rather than ...と近い意味。動詞の原形が続く点が語法問題で問われる。",
+    "exEn": "\"I would rather stay home than go out tonight.\"",
+    "exJa": "「今夜は出かけるより家にいたい」"
   },
   {
-    "tag": "Chores",
-    "en": "Take out the trash, please.",
-    "ja": "ゴミ出しお願いね。",
-    "context": "ゴミ出しを頼むときの表現。",
-    "exEn": "\"Take out the trash, please. It's collection day.\"",
-    "exJa": "ゴミ出しお願いね。今日は収集日だよ。"
+    "tag": "Grammar",
+    "en": "the sooner, the better",
+    "ja": "早ければ早いほど良い",
+    "context": "the + 比較級 ..., the + 比較級 ...の構文。CASEC文法問題の定番パターン。",
+    "exEn": "\"The sooner you start, the better the results.\"",
+    "exJa": "「早く始めれば始めるほど、結果は良くなる」"
   },
   {
-    "tag": "Bedtime",
-    "en": "Time for bed.",
-    "ja": "もう寝る時間だよ。",
-    "context": "就寝を促す定番の声かけ。",
-    "exEn": "\"It's late. Time for bed.\"",
-    "exJa": "もう遅いよ。寝る時間だよ。"
+    "tag": "Grammar",
+    "en": "It is said that ...",
+    "ja": "〜だと言われている",
+    "context": "受動態を使った伝聞表現。people say that ...への書き換えが問われることが多い。",
+    "exEn": "\"It is said that the company will expand overseas.\"",
+    "exJa": "「その会社は海外展開すると言われている」"
   },
   {
-    "tag": "Bedtime",
-    "en": "Did you brush your teeth?",
-    "ja": "歯磨きした？",
-    "context": "寝る前の確認の定番。",
-    "exEn": "\"Did you brush your teeth and wash your face?\"",
-    "exJa": "歯磨きと顔洗いした？"
+    "tag": "Grammar",
+    "en": "have something done",
+    "ja": "〜をしてもらう・される",
+    "context": "使役・被害の受動態構文。have my hair cutのように「する側」ではなく「される側」が主語。",
+    "exEn": "\"I had my car repaired yesterday.\"",
+    "exJa": "「昨日、車を修理してもらった」"
   },
   {
-    "tag": "Bedtime",
-    "en": "One more story, then sleep.",
-    "ja": "あと1冊だけ読んだら寝ようね。",
-    "context": "絵本の読み聞かせを切り上げる表現。",
-    "exEn": "\"Okay, one more story, then sleep.\"",
-    "exJa": "じゃあ、あと1冊だけ読んだら寝ようね。"
+    "tag": "Grammar",
+    "en": "by the time ...",
+    "ja": "〜するまでには",
+    "context": "未来完了・過去完了とセットで使われることが多い時の接続詞。時制の一致が問われる。",
+    "exEn": "\"By the time we arrive, the meeting will have started.\"",
+    "exJa": "「私たちが着く頃には、会議は始まっているだろう」"
   },
   {
-    "tag": "Bedtime",
-    "en": "Goodnight, sleep tight.",
-    "ja": "おやすみ、よく眠ってね。",
-    "context": "おやすみの定番フレーズ。",
-    "exEn": "\"Goodnight, sleep tight. Love you.\"",
-    "exJa": "おやすみ、よく眠ってね。大好きだよ。"
+    "tag": "Grammar",
+    "en": "despite / in spite of + 名詞",
+    "ja": "〜にもかかわらず",
+    "context": "althoughと違い直後に名詞（句）が続く前置詞。品詞の識別が語法問題の定番。",
+    "exEn": "\"Despite the rain, the event continued.\"",
+    "exJa": "「雨にもかかわらず、イベントは続行された」"
   },
   {
-    "tag": "Bedtime",
-    "en": "Sweet dreams.",
-    "ja": "いい夢を。",
-    "context": "寝る前の優しいひとこと。",
-    "exEn": "\"Lights out. Sweet dreams.\"",
-    "exJa": "電気消すよ。いい夢を。"
+    "tag": "Grammar",
+    "en": "be supposed to do",
+    "ja": "〜することになっている",
+    "context": "予定・義務を表す表現。ビジネスの会話文でスケジュール確認の場面によく登場する。",
+    "exEn": "\"The report is supposed to be finished by Friday.\"",
+    "exJa": "「その報告書は金曜までに完成することになっている」"
   },
   {
-    "tag": "Love",
-    "en": "I love you so much.",
-    "ja": "大好きだよ。",
-    "context": "家族への愛情を伝える基本表現。",
-    "exEn": "\"I love you so much, you know that?\"",
-    "exJa": "大好きだよ、知ってる？"
+    "tag": "Grammar",
+    "en": "It is worth doing",
+    "ja": "〜する価値がある",
+    "context": "worthの後は動名詞。worth to doとしないことが語法問題の狙い目。",
+    "exEn": "\"This museum is worth visiting.\"",
+    "exJa": "「この美術館は訪れる価値がある」"
   },
   {
-    "tag": "Love",
-    "en": "You make me proud.",
-    "ja": "君は自慢の子だよ。",
-    "context": "子どもの存在を誇りに思う表現。",
-    "exEn": "\"You make me proud every day.\"",
-    "exJa": "毎日、君を自慢に思ってるよ。"
+    "tag": "Grammar",
+    "en": "cannot help doing",
+    "ja": "〜せずにはいられない",
+    "context": "can't help but doとほぼ同義。動名詞を伴う慣用表現として頻出。",
+    "exEn": "\"I couldn't help laughing at the joke.\"",
+    "exJa": "「その冗談に笑わずにはいられなかった」"
   },
   {
-    "tag": "Love",
-    "en": "Give me a hug.",
-    "ja": "ハグして。",
-    "context": "スキンシップを求める温かい表現。",
-    "exEn": "\"Come here and give me a hug.\"",
-    "exJa": "おいで、ハグして。"
+    "tag": "Grammar",
+    "en": "no matter how ...",
+    "ja": "どんなに〜でも",
+    "context": "譲歩を表す複合関係詞。howeverへの書き換えが問われることがある。",
+    "exEn": "\"No matter how hard it is, keep trying.\"",
+    "exJa": "「どんなに大変でも、挑戦し続けなさい」"
   },
   {
-    "tag": "Love",
-    "en": "Family comes first.",
-    "ja": "家族が一番大事だよ。",
-    "context": "家族を大切にする気持ちを伝える表現。",
-    "exEn": "\"No matter what, family comes first.\"",
-    "exJa": "何があっても、家族が一番大事だよ。"
+    "tag": "Phrasal",
+    "en": "put off",
+    "ja": "延期する",
+    "context": "postponeと同義の句動詞。目的語が代名詞のときは put it off のように間に入る点も出題される。",
+    "exEn": "\"They put off the meeting until Monday.\"",
+    "exJa": "「彼らは会議を月曜まで延期した」"
   },
   {
-    "tag": "Praise",
-    "en": "Good job!",
-    "ja": "よくできたね！",
-    "context": "頑張りをほめる最も基本的な表現。",
-    "exEn": "\"Good job! You worked really hard.\"",
-    "exJa": "よくできたね！本当に頑張ったね。"
+    "tag": "Phrasal",
+    "en": "bring up",
+    "ja": "話題に出す、育てる",
+    "context": "文脈によって「（話題を）持ち出す」「（子どもを）育てる」の2つの意味がある多義句動詞。",
+    "exEn": "\"She brought up an interesting point at the meeting.\"",
+    "exJa": "「彼女は会議で興味深い点を持ち出した」"
   },
   {
-    "tag": "Praise",
-    "en": "I'm so proud of you.",
-    "ja": "君を誇りに思うよ。",
-    "context": "成果や努力をたたえる表現。",
-    "exEn": "\"You did it! I'm so proud of you.\"",
-    "exJa": "やったね！君を誇りに思うよ。"
+    "tag": "Phrasal",
+    "en": "come up with",
+    "ja": "（アイデアなどを）思いつく",
+    "context": "think ofと近い意味の句動詞。ビジネス系リスニングの提案場面で頻出。",
+    "exEn": "\"We need to come up with a new plan.\"",
+    "exJa": "「新しい計画を思いつく必要がある」"
   },
   {
-    "tag": "Praise",
-    "en": "You did your best.",
-    "ja": "よく頑張ったね。",
-    "context": "結果に関わらず努力を認める表現。",
-    "exEn": "\"It's okay. You did your best.\"",
-    "exJa": "大丈夫だよ。よく頑張ったね。"
+    "tag": "Phrasal",
+    "en": "look into",
+    "ja": "調査する",
+    "context": "investigateと同義のややフォーマルな句動詞。ビジネスメールの表現として頻出。",
+    "exEn": "\"We will look into the issue right away.\"",
+    "exJa": "「その問題をすぐに調査します」"
   },
   {
-    "tag": "Praise",
-    "en": "Well done, sweetie.",
-    "ja": "よくやったね。",
-    "context": "子どもをやさしくほめるひとこと。",
-    "exEn": "\"Well done, sweetie. I knew you could do it.\"",
-    "exJa": "よくやったね。できると思ってたよ。"
+    "tag": "Phrasal",
+    "en": "run out of",
+    "ja": "〜を使い果たす",
+    "context": "在庫・時間・お金など「〜が尽きる」場面で使われる。ビジネスリスニングの定番表現。",
+    "exEn": "\"We're running out of time.\"",
+    "exJa": "「時間が足りなくなってきている」"
   },
   {
-    "tag": "Care",
-    "en": "Are you feeling okay?",
-    "ja": "具合はどう？大丈夫？",
-    "context": "体調を気遣うときの表現。",
-    "exEn": "\"You look pale. Are you feeling okay?\"",
-    "exJa": "顔色悪いよ。具合は大丈夫？"
+    "tag": "Phrasal",
+    "en": "hand in",
+    "ja": "提出する",
+    "context": "submitと同義の句動詞。宿題・書類の提出場面で頻出。",
+    "exEn": "\"Please hand in your report by Friday.\"",
+    "exJa": "「金曜までに報告書を提出してください」"
   },
   {
-    "tag": "Care",
-    "en": "You look tired.",
-    "ja": "疲れてるみたいだね。",
-    "context": "相手の様子を気遣う表現。",
-    "exEn": "\"You look tired. Why don't you rest?\"",
-    "exJa": "疲れてるみたいだね。休んだら？"
+    "tag": "Phrasal",
+    "en": "set up",
+    "ja": "設立する、準備する",
+    "context": "establish（設立する）、prepare（準備する）両方の意味で使われる汎用句動詞。",
+    "exEn": "\"They set up a new branch office in Osaka.\"",
+    "exJa": "「彼らは大阪に新しい支社を設立した」"
   },
   {
-    "tag": "Health",
-    "en": "Do you have a fever?",
-    "ja": "熱あるの？",
-    "context": "体調不良の子を気遣う表現。",
-    "exEn": "\"You're warm. Do you have a fever?\"",
-    "exJa": "体が熱いね。熱あるの？"
+    "tag": "Phrasal",
+    "en": "carry out",
+    "ja": "実行する",
+    "context": "conduct、implementと同義。調査や計画の実行場面で頻出のビジネス表現。",
+    "exEn": "\"The company carried out a customer survey.\"",
+    "exJa": "「その会社は顧客調査を実施した」"
   },
   {
-    "tag": "Health",
-    "en": "Get well soon.",
-    "ja": "早く良くなってね。",
-    "context": "病気の家族を気遣う定番表現。",
-    "exEn": "\"Drink lots of water and get well soon.\"",
-    "exJa": "お水たくさん飲んで、早く良くなってね。"
+    "tag": "Phrasal",
+    "en": "fill in / fill out",
+    "ja": "（用紙に）記入する",
+    "context": "英でfill in、米でfill outが好まれる傾向。フォーム記入のリスニング場面で頻出。",
+    "exEn": "\"Please fill out this application form.\"",
+    "exJa": "「この申込用紙に記入してください」"
   },
   {
-    "tag": "Health",
-    "en": "Stay home and rest today.",
-    "ja": "今日は家で休みなさい。",
-    "context": "体調不良の家族に休養を勧める表現。",
-    "exEn": "\"You're not well. Stay home and rest today.\"",
-    "exJa": "具合悪いね。今日は家で休みなさい。"
+    "tag": "Phrasal",
+    "en": "get along with",
+    "ja": "〜とうまくやっていく",
+    "context": "人間関係を表す句動詞。get on withも同義でイギリス英語でよく使われる。",
+    "exEn": "\"He gets along well with his coworkers.\"",
+    "exJa": "「彼は同僚とうまくやっている」"
   },
   {
-    "tag": "Talk",
-    "en": "How was your day?",
-    "ja": "今日はどうだった？",
-    "context": "家族の一日を尋ねる定番の会話。",
-    "exEn": "\"Sit down. How was your day?\"",
-    "exJa": "座って。今日はどうだった？"
+    "tag": "Idiom",
+    "en": "under the weather",
+    "ja": "体調が優れない",
+    "context": "not feeling wellのくだけた言い方。日常会話のリスニングで登場する慣用句。",
+    "exEn": "\"I'm feeling a bit under the weather today.\"",
+    "exJa": "「今日は少し体調が優れません」"
   },
   {
-    "tag": "Talk",
-    "en": "Tell me about your day.",
-    "ja": "今日のこと聞かせて。",
-    "context": "相手の話に耳を傾ける表現。",
-    "exEn": "\"I want to hear everything. Tell me about your day.\"",
-    "exJa": "全部聞きたいな。今日のこと聞かせて。"
+    "tag": "Idiom",
+    "en": "on the fence",
+    "ja": "決めかねている、中立の立場",
+    "context": "undecidedの比喩表現。意見を問う場面のリスニング問題で使われることがある。",
+    "exEn": "\"I'm still on the fence about the new proposal.\"",
+    "exJa": "「新しい提案についてまだ決めかねている」"
   },
   {
-    "tag": "Talk",
-    "en": "What did you learn today?",
-    "ja": "今日は何を学んだ？",
-    "context": "子どもに学校での学びを尋ねる表現。",
-    "exEn": "\"What did you learn today at school?\"",
-    "exJa": "今日は学校で何を学んだ？"
+    "tag": "Idiom",
+    "en": "break the ice",
+    "ja": "場の緊張をほぐす",
+    "context": "初対面の場面や会議の冒頭で使われる定番の比喩表現。",
+    "exEn": "\"He told a joke to break the ice.\"",
+    "exJa": "「彼は場を和ませるために冗談を言った」"
   },
   {
-    "tag": "Outing",
-    "en": "Let's go to the park.",
-    "ja": "公園に行こう。",
-    "context": "家族で出かけるときの誘いの表現。",
-    "exEn": "\"It's sunny. Let's go to the park.\"",
-    "exJa": "いい天気だね。公園に行こう。"
+    "tag": "Idiom",
+    "en": "cut corners",
+    "ja": "手を抜く、経費を切り詰める",
+    "context": "品質や手順を省略して簡略化するという否定的なニュアンスの慣用句。",
+    "exEn": "\"They cut corners to save money, and quality suffered.\"",
+    "exJa": "「彼らは経費を切り詰めた結果、品質が落ちた」"
   },
   {
-    "tag": "Outing",
-    "en": "Get your shoes on.",
-    "ja": "靴を履いてね。",
-    "context": "出かける準備を促す表現。",
-    "exEn": "\"We're leaving. Get your shoes on.\"",
-    "exJa": "出発するよ。靴を履いてね。"
+    "tag": "Idiom",
+    "en": "in the long run",
+    "ja": "長い目で見れば",
+    "context": "eventuallyに近いが「最終的な結果」を強調する表現。ビジネス文章の結論部でよく使われる。",
+    "exEn": "\"It's expensive now, but it will pay off in the long run.\"",
+    "exJa": "「今は高くつくが、長い目で見れば元が取れる」"
   },
   {
-    "tag": "Outing",
-    "en": "Are you ready to go?",
-    "ja": "準備できた？",
-    "context": "外出前に準備を確認する表現。",
-    "exEn": "\"The car's waiting. Are you ready to go?\"",
-    "exJa": "車で待ってるよ。準備できた？"
+    "tag": "Listening",
+    "en": "Well, actually, ...",
+    "ja": "ええと、実は〜",
+    "context": "会話の切り出しでよく使われるフィラー＋訂正のマーカー。リスニングで話者の意図転換を捉える手がかり。",
+    "exEn": "\"Well, actually, I think we should reconsider the plan.\"",
+    "exJa": "「ええと、実は、計画を見直すべきだと思うんです」"
   },
   {
-    "tag": "Outing",
-    "en": "Don't wander off.",
-    "ja": "勝手にどこか行かないでね。",
-    "context": "外出先で子どもに注意する表現。",
-    "exEn": "\"Stay close and don't wander off.\"",
-    "exJa": "そばを離れて勝手にどこか行かないでね。"
+    "tag": "Listening",
+    "en": "In other words, ...",
+    "ja": "つまり、言い換えると",
+    "context": "直前の内容を言い換えるディスコースマーカー。大意把握問題で要点を掴む合図になる。",
+    "exEn": "\"Sales dropped 20%. In other words, we're losing money.\"",
+    "exJa": "「売上が20%落ちた。つまり赤字になっているということだ」"
   },
   {
-    "tag": "Safety",
-    "en": "Hold my hand.",
-    "ja": "手をつないで。",
-    "context": "道路などで子どもの安全を守る表現。",
-    "exEn": "\"We're crossing. Hold my hand.\"",
-    "exJa": "渡るよ。手をつないで。"
+    "tag": "Listening",
+    "en": "On the other hand, ...",
+    "ja": "一方で",
+    "context": "対比を導く表現。リスニング大意問題で話の方向転換を聞き取る鍵になる。",
+    "exEn": "\"The new plan is cheaper. On the other hand, it takes more time.\"",
+    "exJa": "「新しい計画は安い。一方で時間がかかる」"
   },
   {
-    "tag": "Safety",
-    "en": "Look both ways.",
-    "ja": "左右をよく見てね。",
-    "context": "道を渡るときの安全の声かけ。",
-    "exEn": "\"Look both ways before you cross.\"",
-    "exJa": "渡る前に左右をよく見てね。"
+    "tag": "Listening",
+    "en": "That being said, ...",
+    "ja": "とはいえ",
+    "context": "前述の内容を認めつつも逆の主張を続けるときの表現。howeverよりも会話的。",
+    "exEn": "\"It's a good idea. That being said, we need more budget.\"",
+    "exJa": "「良いアイデアだ。とはいえ、もっと予算が必要だ」"
   },
   {
-    "tag": "Safety",
-    "en": "Be careful!",
-    "ja": "気をつけて！",
-    "context": "危ないときにとっさに出る表現。",
-    "exEn": "\"Be careful! That's hot.\"",
-    "exJa": "気をつけて！それ熱いよ。"
+    "tag": "Listening",
+    "en": "To sum up, ...",
+    "ja": "要約すると",
+    "context": "話の締めくくりで結論を示すマーカー。アナウンスや講義形式のリスニングの終盤に頻出。",
+    "exEn": "\"To sum up, the project was a success overall.\"",
+    "exJa": "「要約すると、プロジェクトは全体として成功だった」"
   },
   {
-    "tag": "Safety",
-    "en": "Slow down!",
-    "ja": "ゆっくり！",
-    "context": "走り回る子をたしなめる表現。",
-    "exEn": "\"Slow down! You'll fall.\"",
-    "exJa": "ゆっくり！転んじゃうよ。"
+    "tag": "Listening",
+    "en": "as far as I know",
+    "ja": "私の知る限りでは",
+    "context": "情報の確実性を弱める表現。話者が断定を避けているサインとして聞き取りの鍵になる。",
+    "exEn": "\"As far as I know, the store is still open.\"",
+    "exJa": "「私の知る限りでは、その店はまだ営業している」"
   },
   {
-    "tag": "Siblings",
-    "en": "Share with your sister.",
-    "ja": "妹（姉）と分け合ってね。",
-    "context": "きょうだいで分け合うよう促す表現。",
-    "exEn": "\"There's enough for both. Share with your sister.\"",
-    "exJa": "二人分あるよ。妹と分け合ってね。"
+    "tag": "Listening",
+    "en": "I'm afraid ...",
+    "ja": "残念ながら〜、恐縮ですが〜",
+    "context": "悪い知らせを丁寧に伝える前置き。ビジネスの断りの場面のリスニングで頻出。",
+    "exEn": "\"I'm afraid the flight has been delayed.\"",
+    "exJa": "「恐縮ですが、フライトが遅延しています」"
   },
   {
-    "tag": "Siblings",
-    "en": "Stop fighting, you two.",
-    "ja": "二人ともケンカやめて。",
-    "context": "きょうだいげんかを止める表現。",
-    "exEn": "\"Stop fighting, you two. What happened?\"",
-    "exJa": "二人ともケンカやめて。どうしたの？"
+    "tag": "Listening",
+    "en": "Could you bear with me?",
+    "ja": "少々お待ちいただけますか",
+    "context": "電話・会議で待ってもらうときの丁寧な表現。ビジネスリスニングの定番フレーズ。",
+    "exEn": "\"Could you bear with me for a moment while I check?\"",
+    "exJa": "「確認する間、少々お待ちいただけますか」"
   },
   {
-    "tag": "Siblings",
-    "en": "Be nice to your brother.",
-    "ja": "弟（兄）に優しくしてね。",
-    "context": "きょうだいへの思いやりを促す表現。",
-    "exEn": "\"Be nice to your brother. He's little.\"",
-    "exJa": "弟に優しくしてね。まだ小さいんだから。"
+    "tag": "Listening",
+    "en": "Let me get back to you on that.",
+    "ja": "その件は後ほど改めてご連絡します",
+    "context": "即答を避けるビジネス表現。電話応対のリスニング問題でよく登場する。",
+    "exEn": "\"I'm not sure right now. Let me get back to you on that.\"",
+    "exJa": "「今すぐには分かりません。後ほど改めてご連絡します」"
   },
   {
-    "tag": "Siblings",
-    "en": "Take turns.",
-    "ja": "順番こだよ。",
-    "context": "おもちゃなどを順番に使うよう促す表現。",
-    "exEn": "\"There's only one. You have to take turns.\"",
-    "exJa": "1つしかないよ。順番こで使ってね。"
+    "tag": "Listening",
+    "en": "Sorry, could you run that by me again?",
+    "ja": "すみません、もう一度説明していただけますか",
+    "context": "聞き返すときの丁寧な表現。リスニングでは聞き手が確認を求める場面の定番。",
+    "exEn": "\"Sorry, could you run that by me again? I missed the last part.\"",
+    "exJa": "「すみません、もう一度説明していただけますか。最後の部分を聞き逃しました」"
   },
   {
-    "tag": "Siblings",
-    "en": "Say you're sorry.",
-    "ja": "ごめんなさいを言いなさい。",
-    "context": "謝るよう促すしつけの表現。",
-    "exEn": "\"You hurt her. Say you're sorry.\"",
-    "exJa": "妹を痛くしたでしょ。ごめんなさいを言いなさい。"
+    "tag": "Listening",
+    "en": "attached please find ...",
+    "ja": "〜を添付いたします",
+    "context": "ビジネスメールの定型表現。CASECの読解・リスニングでメール文の場面がよく出題される。",
+    "exEn": "\"Attached please find the invoice for last month.\"",
+    "exJa": "「先月分の請求書を添付いたします」"
   },
   {
-    "tag": "Discipline",
-    "en": "That's enough.",
-    "ja": "もうそれくらいにして。",
-    "context": "やりすぎをたしなめる表現。",
-    "exEn": "\"That's enough. Settle down now.\"",
-    "exJa": "もうそれくらいにして。落ち着いて。"
+    "tag": "Listening",
+    "en": "I'd appreciate it if you could ...",
+    "ja": "〜していただけるとありがたいのですが",
+    "context": "丁寧な依頼表現。ビジネスメール・電話のリスニング頻出パターン。",
+    "exEn": "\"I'd appreciate it if you could send the file by tomorrow.\"",
+    "exJa": "「明日までにファイルを送っていただけるとありがたいです」"
   },
   {
-    "tag": "Discipline",
-    "en": "Calm down.",
-    "ja": "落ち着いて。",
-    "context": "興奮した家族をなだめる表現。",
-    "exEn": "\"Take a deep breath and calm down.\"",
-    "exJa": "深呼吸して、落ち着いて。"
+    "tag": "Listening",
+    "en": "due to unforeseen circumstances",
+    "ja": "予期せぬ事情により",
+    "context": "アナウンスでキャンセルや変更を伝える定型句。空港・イベントのリスニング問題で頻出。",
+    "exEn": "\"The flight was canceled due to unforeseen circumstances.\"",
+    "exJa": "「予期せぬ事情によりフライトはキャンセルされた」"
   },
   {
-    "tag": "Discipline",
-    "en": "Use your inside voice.",
-    "ja": "室内では静かな声でね。",
-    "context": "家や室内で大声を出す子への声かけ。",
-    "exEn": "\"We're inside. Use your inside voice.\"",
-    "exJa": "室内だよ。静かな声でね。"
+    "tag": "Listening",
+    "en": "Please be advised that ...",
+    "ja": "〜であることをご承知おきください",
+    "context": "アナウンス・通知文の定型表現。フォーマルなリスニング素材で頻出。",
+    "exEn": "\"Please be advised that the office will be closed on Monday.\"",
+    "exJa": "「月曜日はオフィスが休みであることをご承知おきください」"
   },
   {
-    "tag": "Discipline",
-    "en": "No more screen time today.",
-    "ja": "今日はもう動画（ゲーム）はおしまい。",
-    "context": "スクリーンタイムを区切る表現。",
-    "exEn": "\"That's enough. No more screen time today.\"",
-    "exJa": "もう十分だよ。今日はもう動画はおしまい。"
+    "tag": "Listening",
+    "en": "on short notice",
+    "ja": "急な知らせで、直前になって",
+    "context": "予定変更が急だったことを表す表現。スケジュール変更のリスニングでよく出る。",
+    "exEn": "\"Thank you for coming on such short notice.\"",
+    "exJa": "「急なお知らせにもかかわらずお越しいただきありがとうございます」"
   },
   {
-    "tag": "Discipline",
-    "en": "Listen to me, please.",
-    "ja": "ちゃんと聞いてね。",
-    "context": "話を聞いてほしいときの表現。",
-    "exEn": "\"Look at me and listen to me, please.\"",
-    "exJa": "こっちを見て、ちゃんと聞いてね。"
+    "tag": "Vocab",
+    "en": "accommodate",
+    "ja": "収容する、対応する",
+    "context": "「（人数を）収容できる」「（要望に）応じる」両方の意味を持つ多義語。ホテル・会議のリスニングで頻出。",
+    "exEn": "\"The hall can accommodate up to 300 people.\"",
+    "exJa": "「そのホールは最大300人を収容できる」"
   },
   {
-    "tag": "Request",
-    "en": "Can you pass the salt?",
-    "ja": "塩を取ってくれる？",
-    "context": "食卓でのお願いの定番。",
-    "exEn": "\"Can you pass the salt, please?\"",
-    "exJa": "塩を取ってくれる？"
+    "tag": "Vocab",
+    "en": "eligible",
+    "ja": "資格がある",
+    "context": "be eligible for/to doの形で使われる。応募資格を説明する文脈で頻出の語彙。",
+    "exEn": "\"You are eligible for a discount if you're a student.\"",
+    "exJa": "「学生であれば割引の対象になります」"
   },
   {
-    "tag": "Request",
-    "en": "Could you turn down the TV?",
-    "ja": "テレビの音量下げてくれる？",
-    "context": "音量を下げてほしいときの表現。",
-    "exEn": "\"It's a bit loud. Could you turn down the TV?\"",
-    "exJa": "ちょっとうるさいよ。テレビの音量下げてくれる？"
+    "tag": "Vocab",
+    "en": "redundant",
+    "ja": "余分な、冗長な",
+    "context": "「くどい・重複した」という意味に加え、イギリス英語では「解雇された」の意味もある多義語。",
+    "exEn": "\"That sentence sounds redundant—let's simplify it.\"",
+    "exJa": "「その文は冗長に聞こえる。簡潔にしよう」"
   },
   {
-    "tag": "Request",
-    "en": "Bring me my glasses, please.",
-    "ja": "メガネを持ってきてくれる？",
-    "context": "ちょっとした用事を頼む表現。",
-    "exEn": "\"Bring me my glasses, please. They're on the table.\"",
-    "exJa": "メガネを持ってきてくれる？テーブルの上にあるよ。"
+    "tag": "Vocab",
+    "en": "feasible",
+    "ja": "実現可能な",
+    "context": "possibleよりも「実行に移せる」というニュアンスが強い語。企画会議のリスニングで頻出。",
+    "exEn": "\"Is it feasible to finish this by Friday?\"",
+    "exJa": "「これを金曜までに終わらせるのは実現可能ですか」"
   },
   {
-    "tag": "Request",
-    "en": "Can you watch your sister?",
-    "ja": "妹（姉）を見ててくれる？",
-    "context": "年上の子に弟妹の世話を頼む表現。",
-    "exEn": "\"I'll be right back. Can you watch your sister?\"",
-    "exJa": "すぐ戻るから、妹を見ててくれる？"
+    "tag": "Vocab",
+    "en": "compelling",
+    "ja": "説得力のある、人を引きつける",
+    "context": "convincingに近い意味だが、より強く心を動かすニュアンス。プレゼン評価の語彙問題に頻出。",
+    "exEn": "\"She made a compelling argument for the new policy.\"",
+    "exJa": "「彼女は新方針について説得力のある主張をした」"
   },
   {
-    "tag": "Home",
-    "en": "I'm home!",
-    "ja": "ただいま！",
-    "context": "帰宅したときの第一声。",
-    "exEn": "\"I'm home! I missed you all.\"",
-    "exJa": "ただいま！みんなに会いたかったよ。"
+    "tag": "Vocab",
+    "en": "discrepancy",
+    "ja": "食い違い、不一致",
+    "context": "数字や記録の不一致を表すフォーマルな語。経理・報告書関連のリスニングで頻出。",
+    "exEn": "\"There's a discrepancy between the two reports.\"",
+    "exJa": "「2つの報告書の間に食い違いがある」"
   },
   {
-    "tag": "Home",
-    "en": "Welcome home.",
-    "ja": "おかえり。",
-    "context": "帰ってきた家族を迎える表現。",
-    "exEn": "\"Welcome home. Dinner's almost ready.\"",
-    "exJa": "おかえり。ご飯もうすぐできるよ。"
+    "tag": "Vocab",
+    "en": "versatile",
+    "ja": "多才な、多用途の",
+    "context": "人にもモノにも使える語。「応用が利く」というニュアンスを持つ。",
+    "exEn": "\"This tool is versatile and can be used for many tasks.\"",
+    "exJa": "「この道具は多用途でさまざまな作業に使える」"
   },
   {
-    "tag": "Home",
-    "en": "Who wants ice cream?",
-    "ja": "アイス食べたい人？",
-    "context": "家族みんなに呼びかける楽しい表現。",
-    "exEn": "\"Who wants ice cream for dessert?\"",
-    "exJa": "デザートにアイス食べたい人？"
+    "tag": "Vocab",
+    "en": "ambiguous",
+    "ja": "曖昧な",
+    "context": "clearの対義語として語彙問題で頻出。契約文書や指示の不明瞭さを表す文脈で使われる。",
+    "exEn": "\"The instructions were ambiguous, so we asked for clarification.\"",
+    "exJa": "「指示が曖昧だったので、明確化を求めた」"
   },
   {
-    "tag": "Home",
-    "en": "Dinner's in five minutes.",
-    "ja": "ご飯あと5分でできるよ。",
-    "context": "食事の時間を予告する表現。",
-    "exEn": "\"Wash up. Dinner's in five minutes.\"",
-    "exJa": "手を洗ってね。ご飯あと5分でできるよ。"
+    "tag": "Vocab",
+    "en": "prerequisite",
+    "ja": "前提条件、必須条件",
+    "context": "requirementに近いが「〜する前に必要な条件」という順序のニュアンスを持つ。",
+    "exEn": "\"Basic programming knowledge is a prerequisite for this course.\"",
+    "exJa": "「基本的なプログラミング知識がこの講座の前提条件です」"
   },
   {
-    "tag": "Parents",
-    "en": "Thanks for everything, Mom.",
-    "ja": "お母さん、いつもありがとう。",
-    "context": "親への感謝を伝える表現。",
-    "exEn": "\"Thanks for everything, Mom. I mean it.\"",
-    "exJa": "お母さん、いつもありがとう。本当だよ。"
+    "tag": "Vocab",
+    "en": "unanimous",
+    "ja": "満場一致の",
+    "context": "会議の決定を表す語彙。ビジネス・組織のリスニング問題で頻出。",
+    "exEn": "\"The board reached a unanimous decision.\"",
+    "exJa": "「役員会は満場一致で決定に達した」"
   },
   {
-    "tag": "Parents",
-    "en": "How are you feeling, Dad?",
-    "ja": "お父さん、体調どう？",
-    "context": "親の体調を気遣う表現。",
-    "exEn": "\"How are you feeling, Dad? Any better?\"",
-    "exJa": "お父さん、体調どう？少しは良くなった？"
+    "tag": "Grammar",
+    "en": "either A or B",
+    "ja": "AかBのどちらか",
+    "context": "neither A nor B（AもBも〜ない）とセットで覚える相関接続詞。動詞の人称一致（Bに合わせる）も出題ポイント。",
+    "exEn": "\"Either you or I have to attend the meeting.\"",
+    "exJa": "「あなたか私のどちらかが会議に出席しなければならない」"
   },
   {
-    "tag": "Parents",
-    "en": "Take care of yourself.",
-    "ja": "体に気をつけてね。",
-    "context": "離れて暮らす親などを気遣う表現。",
-    "exEn": "\"Don't overdo it. Take care of yourself.\"",
-    "exJa": "無理しないで。体に気をつけてね。"
+    "tag": "Grammar",
+    "en": "hardly ... when ...",
+    "ja": "〜するとすぐに〜した",
+    "context": "no sooner ... than ...と同義。倒置（Hardly had I ...）が起こる点が文法問題の狙い目。",
+    "exEn": "\"Hardly had I arrived when the phone rang.\"",
+    "exJa": "「到着するとすぐに電話が鳴った」"
   },
   {
-    "tag": "Parents",
-    "en": "Let me help you with that.",
-    "ja": "それ、手伝うよ。",
-    "context": "親の手助けを申し出る表現。",
-    "exEn": "\"That's heavy. Let me help you with that.\"",
-    "exJa": "それ重いよ。手伝うよ。"
+    "tag": "Grammar",
+    "en": "if it were not for ...",
+    "ja": "もし〜がなければ",
+    "context": "仮定法過去の慣用表現。but for...への書き換えも問われる定番構文。",
+    "exEn": "\"If it were not for your help, I would fail.\"",
+    "exJa": "「あなたの助けがなければ、私は失敗するだろう」"
   },
   {
-    "tag": "Parents",
-    "en": "Call me when you get home.",
-    "ja": "着いたら電話してね。",
-    "context": "家族の安全を気遣って連絡を頼む表現。",
-    "exEn": "\"Drive safe and call me when you get home.\"",
-    "exJa": "気をつけて運転して、着いたら電話してね。"
+    "tag": "Grammar",
+    "en": "given that ...",
+    "ja": "〜を考慮すると",
+    "context": "considering thatと同義の接続表現。ビジネス文書での前提条件の提示に使われる。",
+    "exEn": "\"Given that the deadline is tight, we should start now.\"",
+    "exJa": "「締め切りが厳しいことを考慮すると、今すぐ始めるべきだ」"
   },
   {
-    "tag": "Play",
-    "en": "Let's play a game.",
-    "ja": "ゲームしよう。",
-    "context": "家族で遊ぶときの誘いの表現。",
-    "exEn": "\"I'm free now. Let's play a game.\"",
-    "exJa": "今ひまだよ。ゲームしよう。"
+    "tag": "Grammar",
+    "en": "as opposed to ...",
+    "ja": "〜とは対照的に",
+    "context": "対比を明示する前置詞句。比較を問う語彙・文法問題で使われる。",
+    "exEn": "\"We prefer online meetings, as opposed to in-person ones.\"",
+    "exJa": "「対面式に対して、私たちはオンライン会議を好む」"
   },
   {
-    "tag": "Play",
-    "en": "Come play with me.",
-    "ja": "一緒に遊ぼう。",
-    "context": "子どもを遊びに誘う、または誘われる表現。",
-    "exEn": "\"Daddy, come play with me!\"",
-    "exJa": "パパ、一緒に遊ぼう！"
+    "tag": "Idiom",
+    "en": "get the ball rolling",
+    "ja": "物事を始動させる",
+    "context": "プロジェクトや議論を始めるときの比喩表現。ビジネス会話で頻出。",
+    "exEn": "\"Let's get the ball rolling on this project.\"",
+    "exJa": "「このプロジェクトを始動させよう」"
   },
   {
-    "tag": "Play",
-    "en": "That looks like fun.",
-    "ja": "楽しそうだね。",
-    "context": "子どもの遊びに関心を示す表現。",
-    "exEn": "\"Wow, that looks like fun. Can I join?\"",
-    "exJa": "わあ、楽しそうだね。混ぜて？"
+    "tag": "Idiom",
+    "en": "back to square one",
+    "ja": "振り出しに戻る",
+    "context": "計画が失敗して最初からやり直すことを表す慣用句。",
+    "exEn": "\"The deal fell through, so we're back to square one.\"",
+    "exJa": "「取引が破談になって、振り出しに戻ってしまった」"
   },
   {
-    "tag": "Play",
-    "en": "Be gentle.",
-    "ja": "優しくね。",
-    "context": "ペットや小さい子に優しく接するよう促す表現。",
-    "exEn": "\"The puppy is small. Be gentle.\"",
-    "exJa": "子犬は小さいから、優しくね。"
+    "tag": "Idiom",
+    "en": "think outside the box",
+    "ja": "既成概念にとらわれずに考える",
+    "context": "creative thinkingを促す定番の比喩表現。ビジネス・企画会議で頻出。",
+    "exEn": "\"We need to think outside the box to solve this.\"",
+    "exJa": "「これを解決するには既成概念にとらわれない発想が必要だ」"
   },
   {
-    "tag": "Comfort",
-    "en": "It's okay, don't cry.",
-    "ja": "大丈夫、泣かないで。",
-    "context": "泣いている子をなだめる表現。",
-    "exEn": "\"It's okay, don't cry. I'm here.\"",
-    "exJa": "大丈夫、泣かないで。そばにいるよ。"
+    "tag": "Idiom",
+    "en": "on the same page",
+    "ja": "認識が一致している",
+    "context": "agreementの比喩表現。会議で全員の理解を揃える場面で使われる。",
+    "exEn": "\"Let's make sure everyone is on the same page before we proceed.\"",
+    "exJa": "「進める前に全員の認識が一致しているか確認しよう」"
   },
   {
-    "tag": "Comfort",
-    "en": "I'm right here.",
-    "ja": "すぐそばにいるよ。",
-    "context": "不安な家族を安心させる表現。",
-    "exEn": "\"Don't be scared. I'm right here.\"",
-    "exJa": "怖がらないで。すぐそばにいるよ。"
+    "tag": "Idiom",
+    "en": "a rule of thumb",
+    "ja": "経験則、目安",
+    "context": "厳密な規則ではなく経験に基づく大まかな基準を表す表現。",
+    "exEn": "\"As a rule of thumb, save 10% of your income.\"",
+    "exJa": "「経験則として、収入の10%を貯金しなさい」"
   },
   {
-    "tag": "Comfort",
-    "en": "Everything's going to be fine.",
-    "ja": "きっと大丈夫だよ。",
-    "context": "心配する家族を励ます表現。",
-    "exEn": "\"Don't worry. Everything's going to be fine.\"",
-    "exJa": "心配しないで。きっと大丈夫だよ。"
+    "tag": "Phrasal",
+    "en": "follow up on",
+    "ja": "〜についてフォローアップする、追跡確認する",
+    "context": "ビジネスメールで進捗確認をするときの定番表現。",
+    "exEn": "\"I'm just following up on my previous email.\"",
+    "exJa": "「先日のメールについてフォローアップさせていただきます」"
   },
   {
-    "tag": "Comfort",
-    "en": "Come here, let me see.",
-    "ja": "おいで、見せてごらん。",
-    "context": "ケガをした子を気遣う表現。",
-    "exEn": "\"You scraped your knee? Come here, let me see.\"",
-    "exJa": "ひざすりむいたの？おいで、見せてごらん。"
+    "tag": "Phrasal",
+    "en": "account for",
+    "ja": "説明する、（割合を）占める",
+    "context": "「理由を説明する」「一定の割合を占める」の2つの意味がある多義句動詞。",
+    "exEn": "\"Overseas sales account for 40% of our revenue.\"",
+    "exJa": "「海外売上が我が社の収益の40%を占める」"
   },
   {
-    "tag": "Weekend",
-    "en": "What should we do this weekend?",
-    "ja": "今週末どうする？",
-    "context": "家族で週末の予定を相談する表現。",
-    "exEn": "\"What should we do this weekend as a family?\"",
-    "exJa": "今週末、家族で何しよっか？"
-  },
-  {
-    "tag": "Weekend",
-    "en": "Let's have a movie night.",
-    "ja": "今夜は映画ナイトにしよう。",
-    "context": "家族で映画を観る夜を提案する表現。",
-    "exEn": "\"Let's have a movie night with popcorn.\"",
-    "exJa": "ポップコーンで映画ナイトにしよう。"
-  },
-  {
-    "tag": "Weekend",
-    "en": "Let's visit Grandma.",
-    "ja": "おばあちゃんに会いに行こう。",
-    "context": "祖父母を訪ねる予定を提案する表現。",
-    "exEn": "\"It's been a while. Let's visit Grandma.\"",
-    "exJa": "久しぶりだね。おばあちゃんに会いに行こう。"
-  },
-  {
-    "tag": "Gratitude",
-    "en": "Thank you for helping.",
-    "ja": "手伝ってくれてありがとう。",
-    "context": "手伝ってくれた家族への感謝。",
-    "exEn": "\"Thank you for helping with dinner.\"",
-    "exJa": "夕飯の支度、手伝ってくれてありがとう。"
-  },
-  {
-    "tag": "Gratitude",
-    "en": "That was very kind of you.",
-    "ja": "優しいね、ありがとう。",
-    "context": "思いやりのある行動をほめる表現。",
-    "exEn": "\"You shared your snack? That was very kind of you.\"",
-    "exJa": "おやつ分けてあげたの？優しいね、ありがとう。"
-  },
-  {
-    "tag": "Apology",
-    "en": "I'm sorry I yelled.",
-    "ja": "怒鳴ってごめんね。",
-    "context": "感情的になったことを子に謝る表現。",
-    "exEn": "\"I'm sorry I yelled. I was tired.\"",
-    "exJa": "怒鳴ってごめんね。疲れててね。"
-  },
-  {
-    "tag": "Apology",
-    "en": "Let's make up.",
-    "ja": "仲直りしよう。",
-    "context": "きょうだいや家族の仲直りを促す表現。",
-    "exEn": "\"Come on, let's make up. Hug it out.\"",
-    "exJa": "ほら、仲直りしよう。ハグして。"
-  },
-  {
-    "tag": "Everyday",
-    "en": "Turn off the lights.",
-    "ja": "電気を消してね。",
-    "context": "節電や就寝前のちょっとしたお願い。",
-    "exEn": "\"Last one out, turn off the lights.\"",
-    "exJa": "最後に出る人、電気を消してね。"
-  },
-  {
-    "tag": "Everyday",
-    "en": "Put on your jacket.",
-    "ja": "上着を着てね。",
-    "context": "寒いときに防寒を促す表現。",
-    "exEn": "\"It's chilly out. Put on your jacket.\"",
-    "exJa": "外は肌寒いよ。上着を着てね。"
-  },
-  {
-    "tag": "Everyday",
-    "en": "Did you lock the door?",
-    "ja": "鍵かけた？",
-    "context": "外出時や就寝前の戸締まり確認。",
-    "exEn": "\"Before we leave, did you lock the door?\"",
-    "exJa": "出る前に、鍵かけた？"
-  },
-  {
-    "tag": "Everyday",
-    "en": "Hurry up, we're late!",
-    "ja": "急いで、遅れるよ！",
-    "context": "出発前に家族を急かす表現。",
-    "exEn": "\"Hurry up, we're late! Grab your bag.\"",
-    "exJa": "急いで、遅れるよ！カバン持って。"
-  },
-  {
-    "tag": "Encourage",
-    "en": "You can do it.",
-    "ja": "君ならできるよ。",
-    "context": "挑戦する家族を励ます表現。",
-    "exEn": "\"Don't be nervous. You can do it.\"",
-    "exJa": "緊張しないで。君ならできるよ。"
-  },
-  {
-    "tag": "Encourage",
-    "en": "Don't give up.",
-    "ja": "あきらめないで。",
-    "context": "くじけそうな家族を後押しする表現。",
-    "exEn": "\"You're almost there. Don't give up.\"",
-    "exJa": "もうすぐだよ。あきらめないで。"
+    "tag": "Phrasal",
+    "en": "figure out",
+    "ja": "理解する、解決する",
+    "context": "understand、solveに近い口語的な句動詞。日常・ビジネス両方の会話で頻出。",
+    "exEn": "\"I can't figure out how this works.\"",
+    "exJa": "「これがどう動くのか理解できない」"
+  },
+  {
+    "tag": "Phrasal",
+    "en": "narrow down",
+    "ja": "絞り込む",
+    "context": "選択肢を減らして焦点を絞るという意味の句動詞。意思決定の場面で使われる。",
+    "exEn": "\"We narrowed down the candidates to three.\"",
+    "exJa": "「候補者を3人に絞り込んだ」"
+  },
+  {
+    "tag": "Phrasal",
+    "en": "roll out",
+    "ja": "（新製品・サービスを）展開する",
+    "context": "launchに近い意味を持つビジネス頻出の句動詞。",
+    "exEn": "\"The company will roll out the new service next month.\"",
+    "exJa": "「その会社は来月新サービスを展開する予定だ」"
+  },
+  {
+    "tag": "Vocab",
+    "en": "on behalf of",
+    "ja": "〜を代表して",
+    "context": "代理・代表を表す前置詞句。挨拶やスピーチの冒頭で頻出。",
+    "exEn": "\"On behalf of the team, I'd like to thank you.\"",
+    "exJa": "「チームを代表して、感謝申し上げます」"
+  },
+  {
+    "tag": "Vocab",
+    "en": "in accordance with",
+    "ja": "〜に従って",
+    "context": "契約書・規則の文脈で使われるフォーマルな表現。according toのより硬い言い方。",
+    "exEn": "\"Please proceed in accordance with the guidelines.\"",
+    "exJa": "「ガイドラインに従って進めてください」"
+  },
+  {
+    "tag": "Vocab",
+    "en": "with regard to",
+    "ja": "〜に関して",
+    "context": "regardingと同義のフォーマルな前置詞句。ビジネスメールの書き出しで頻出。",
+    "exEn": "\"With regard to your inquiry, we will respond shortly.\"",
+    "exJa": "「お問い合わせに関しまして、追ってご回答いたします」"
+  },
+  {
+    "tag": "Vocab",
+    "en": "in the event that ...",
+    "ja": "万一〜の場合には",
+    "context": "ifよりフォーマルな条件表現。契約書やアナウンスで使われる。",
+    "exEn": "\"In the event that the item is out of stock, we will notify you.\"",
+    "exJa": "「万一在庫切れの場合は、ご連絡いたします」"
+  },
+  {
+    "tag": "Vocab",
+    "en": "subject to change",
+    "ja": "変更されることがある",
+    "context": "スケジュールや価格の注意書きで頻出のフレーズ。読解・リスニング両方で登場する。",
+    "exEn": "\"Prices are subject to change without notice.\"",
+    "exJa": "「価格は予告なく変更される場合があります」"
+  },
+  {
+    "tag": "Synonym",
+    "en": "beside vs. besides",
+    "ja": "〜のそばに／〜に加えて",
+    "context": "besideは場所（そば）、besidesは追加（〜に加えて、〜のほかに）。スペルが似ていて混同されやすい定番ペア。",
+    "exEn": "\"Besides English, she speaks French.\" / \"Sit beside me.\"",
+    "exJa": "「英語に加えて、彼女はフランス語も話す」／「私のそばに座って」"
+  },
+  {
+    "tag": "Grammar",
+    "en": "not until ...",
+    "ja": "〜して初めて、〜するまで〜ない",
+    "context": "It was not until ... that ...の強調構文とセットで頻出。倒置形 Not until ... did ...も出題される。",
+    "exEn": "\"Not until I read the email did I realize the mistake.\"",
+    "exJa": "「そのメールを読んで初めて間違いに気づいた」"
+  },
+  {
+    "tag": "Vocab",
+    "en": "streamline",
+    "ja": "効率化する、合理化する",
+    "context": "業務プロセスを簡素化するという意味のビジネス頻出語。simplifyより経営文脈で使われやすい。",
+    "exEn": "\"We streamlined the approval process to save time.\"",
+    "exJa": "「時間短縮のため承認プロセスを効率化した」"
+  },
+  {
+    "tag": "Listening",
+    "en": "if you don't mind me asking",
+    "ja": "もし差し支えなければお聞きしたいのですが",
+    "context": "立ち入った質問をする前の断り表現。丁寧な会話のリスニングで頻出。",
+    "exEn": "\"If you don't mind me asking, why did you leave your last job?\"",
+    "exJa": "「差し支えなければ、なぜ前職を辞めたのですか」"
+  },
+  {
+    "tag": "Grammar",
+    "en": "the number of vs. a number of",
+    "ja": "〜の数（単数扱い）／いくつかの〜（複数扱い）",
+    "context": "The number of + 複数名詞は単数動詞、A number of + 複数名詞は複数動詞と一致する。主語と動詞の一致を問う定番項目。",
+    "exEn": "\"The number of applicants is increasing.\" / \"A number of applicants have applied.\"",
+    "exJa": "「応募者数が増えている」／「多くの応募者が応募している」"
   }
 ];
 

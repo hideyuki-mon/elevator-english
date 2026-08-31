@@ -1,4 +1,4 @@
-const CACHE = 'ee-f5984a8ac12b';
+const CACHE = 'ee-a94d394d2753';
 const ASSETS = [
   "./",
   "./index.html",
