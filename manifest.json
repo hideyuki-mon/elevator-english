@@ -1,7 +1,7 @@
 {
   "name": "Elevator English",
   "short_name": "Elevator",
-  "description": "1日1フレーズの英会話 (100 phrases)",
+  "description": "エレベーター1分の瞬間想起。語彙と表現を1日15枚、1分で10〜15枚。",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",

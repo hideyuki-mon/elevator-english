@@ -91,7 +91,11 @@
     z-index: 1;
     width: 100%;
     max-width: 420px;
-    margin: auto; /* centers when space allows, scrolls when it doesn't */
+    margin: 0;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     animation: fadeUp 0.35s cubic-bezier(0.16, 1, 0.3, 1) both;
   }
 
@@ -208,6 +212,7 @@
 
   /* Tag */
   .tag {
+    align-self: flex-start;
     display: inline-block;
     font-size: 10px;
     letter-spacing: 0.12em;
@@ -288,34 +293,228 @@
       transition: none !important;
     }
   }
+
+  /* 1-minute recall session */
+  .topbar {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 420px;
+  }
+
+  .timer-wrap {
+    height: 3px;
+    background: rgba(201,168,76,0.18);
+    border-radius: 2px;
+    overflow: hidden;
+    margin-bottom: 12px;
+  }
+
+  .timer-bar {
+    height: 100%;
+    width: 100%;
+    background: var(--gold);
+    transform-origin: left center;
+    transform: scaleX(1);
+  }
+
+  .top-meta {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .timer {
+    font-variant-numeric: tabular-nums;
+    color: var(--gold);
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    min-width: 3.2em;
+  }
+
+  .timer.low { color: #e07a5f; }
+
+  .ride, .count {
+    font-size: 12px;
+    letter-spacing: 0.06em;
+    color: var(--muted);
+  }
+
+  .count { margin-left: auto; }
+
+  .icon-btn {
+    min-width: 44px;
+    min-height: 44px;
+    font-family: inherit;
+    font-size: 17px;
+    color: var(--muted);
+    border: 1px solid rgba(138,135,160,0.4);
+    border-radius: 22px;
+    background: rgba(19,19,26,0.7);
+    cursor: pointer;
+  }
+
+  .icon-btn:active { background: rgba(42,37,56,0.9); }
+
+  .card { min-height: 0; cursor: pointer; }
+  body[data-phase="back"] .card {
+    cursor: default;
+    justify-content: flex-start;
+    overflow-y: auto;
+  }
+
+  .phrase-en.long { font-size: clamp(22px, 6vw, 32px); }
+
+  .recall-prompt {
+    margin-top: 4px;
+    font-size: 14px;
+    letter-spacing: 0.14em;
+    color: var(--muted);
+  }
+
+  .back { padding-bottom: 108px; }
+
+  .grade {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: calc(28px + env(safe-area-inset-bottom));
+    z-index: 4;
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    padding: 0 20px;
+  }
+
+  .grade-btn {
+    flex: 1;
+    max-width: 200px;
+    min-height: 52px;
+    font-family: inherit;
+    font-size: 16px;
+    letter-spacing: 0.08em;
+    border-radius: 14px;
+    cursor: pointer;
+  }
+
+  .grade-btn.again {
+    color: var(--text);
+    background: rgba(19,19,26,0.92);
+    border: 1px solid rgba(138,135,160,0.5);
+  }
+
+  .grade-btn.knew {
+    color: #0a0a0f;
+    background: var(--gold);
+    border: none;
+    font-weight: 700;
+  }
+
+  .summary {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 420px;
+    margin: auto;
+    text-align: center;
+    padding-top: 10vh;
+  }
+
+  .summary-kicker {
+    color: var(--gold);
+    letter-spacing: 0.18em;
+    font-size: 12px;
+    margin-bottom: 18px;
+  }
+
+  .summary-stat {
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 1.3;
+    margin-bottom: 8px;
+  }
+
+  .summary-split {
+    font-size: 16px;
+    color: rgba(240,237,230,0.8);
+    margin-bottom: 18px;
+  }
+
+  .summary-note {
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1.7;
+    margin-bottom: 28px;
+  }
+
+  .again-min {
+    min-height: 48px;
+    padding: 0 22px;
+    font-family: inherit;
+    font-size: 15px;
+    letter-spacing: 0.06em;
+    color: var(--gold-light);
+    background: transparent;
+    border: 1px solid rgba(201,168,76,0.45);
+    border-radius: 24px;
+    cursor: pointer;
+  }
+
+  .topbar[hidden],
+  .card[hidden],
+  .back[hidden],
+  .grade[hidden],
+  .summary[hidden],
+  .recall-prompt[hidden],
+  .swipe-hint[hidden],
+  .icon-btn[hidden] {
+    display: none !important;
+  }
 </style>
 </head>
 <body>
 
-<div class="card" id="card" aria-live="polite">
-  <div class="phrase-num" id="phraseNum"><span id="phraseNumText">Phrase #001 / 100</span><span class="review-badge" id="reviewBadge">復習</span></div>
-  <div class="tag" id="tag">Synonym</div>
-
-  <h1 class="phrase-en" id="phraseEn" lang="en">affect vs. effect</h1>
-  <div class="phrase-ja" id="phraseJa">影響を与える／影響（結果）</div>
-
-  <div class="context-box">
-    <div class="context-label">出題ポイント</div>
-    <div class="context-text" id="context">affectは動詞「〜に影響する」、effectは名詞「影響・効果」。品詞の違いがCASEC語彙問題の定番の狙い目。</div>
-  </div>
-
-  <div class="example-en" id="exampleEn" lang="en">"The delay will affect our schedule." / "The effect was immediate."</div>
-  <div class="example-ja" id="exampleJa">「その遅れはスケジュールに影響する」／「効果はすぐに現れた」</div>
-
-  <div class="bottom-row">
-    <div class="date-display" id="dateDisplay"></div>
-    <div class="progress" id="progress"></div>
+<div class="topbar" id="topbar">
+  <div class="timer-wrap" aria-hidden="true"><div class="timer-bar" id="timerBar"></div></div>
+  <div class="top-meta">
+    <span class="timer" id="timer">1:00</span>
+    <span class="ride" id="ride">今日 1回目</span>
+    <span class="count" id="count">この1分 0枚</span>
+    <button type="button" class="icon-btn" id="speakBtn" aria-label="英文を読み上げる">🔊</button>
   </div>
 </div>
 
-<button class="corner-btn shuffle-btn" id="shuffleBtn" aria-label="別のフレーズをランダム表示">🔀 ランダム</button>
-<button class="corner-btn speak-btn" id="speakBtn" aria-label="英文を読み上げる">🔊</button>
-<div class="swipe-hint" id="swipeHint">← 戻る ｜ 中央タップで発音 ｜ 進む →</div>
+<div class="card" id="card" aria-live="polite">
+  <div class="phrase-num"><span id="phraseNumText">1 / 15</span><span class="review-badge" id="reviewBadge">復習</span></div>
+  <div class="tag" id="tag">Vocab</div>
+  <h1 class="phrase-en" id="phraseEn" lang="en"></h1>
+  <p class="recall-prompt" id="prompt">意味が浮かぶ？</p>
+  <div class="back" id="back" hidden>
+    <div class="phrase-ja" id="phraseJa"></div>
+    <div class="context-box">
+      <div class="context-label">確認</div>
+      <div class="context-text" id="context"></div>
+    </div>
+    <div class="example-en" id="exampleEn" lang="en"></div>
+    <div class="example-ja" id="exampleJa"></div>
+  </div>
+</div>
+
+<div class="grade" id="grade" hidden>
+  <button type="button" class="grade-btn again" id="btnAgain">もう一度</button>
+  <button type="button" class="grade-btn knew" id="btnKnew">即答</button>
+</div>
+
+<div class="summary" id="summary" hidden>
+  <p class="summary-kicker" id="summaryKicker">1分終了</p>
+  <p class="summary-stat" id="summaryStat"></p>
+  <p class="summary-split" id="summarySplit"></p>
+  <p class="summary-note" id="summaryNote"></p>
+  <button type="button" class="again-min" id="btnMore">もう1分</button>
+</div>
+
+<p class="swipe-hint" id="swipeHint">タップで意味。出たら 即答 / もう一度</p>
 
 <script>
 const phrases = [
@@ -1121,11 +1320,16 @@ const phrases = [
   }
 ];
 
-// ---- Real spaced repetition backed by localStorage ----
-// ee_history: { "<idx>": { n: timesSeen, t: lastSeenMs } }
-// After the n-th viewing a phrase comes due again in REVIEW_GAPS_DAYS[n-1] days.
+// Elevator minute = retrieval practice only.
+// One calendar day locks a set of 15 (misses first, then a few reviews, then new).
+// Each open is one 60s ride: English only, tap to reveal Japanese, then 即答 / もう一度.
+// 即答 grows the gap (1 → 3 → 7 → 16 → 35 days). もう一度 stays due and leads the next ride.
+// Listening-tagged cards wait behind vocab / expressions. Commute input and dictation stay outside this app.
 const REVIEW_GAPS_DAYS = [1, 3, 7, 16, 35];
 const DAY_MS = 24 * 60 * 60 * 1000;
+const SESSION_MS = 60 * 1000;
+const DAY_SET = 15;
+const REVIEW_SLOTS = 5;
 
 function loadHistory() {
   try { return JSON.parse(localStorage.getItem('ee_history')) || {}; }
@@ -1136,12 +1340,35 @@ function saveHistory() {
   try { localStorage.setItem('ee_history', JSON.stringify(history)); } catch (e) {}
 }
 
+function todayKey() {
+  const d = new Date();
+  return `${d.getFullYear()}-${d.getMonth() + 1}-${d.getDate()}`;
+}
+function loadDay() {
+  try {
+    const v = JSON.parse(localStorage.getItem('ee_day'));
+    if (v && v.d === todayKey() && Array.isArray(v.set)) return v;
+  } catch (e) {}
+  return { d: todayKey(), again: [], known: [], rides: 0, set: null };
+}
+let day = loadDay();
+function saveDay() {
+  try { localStorage.setItem('ee_day', JSON.stringify(day)); } catch (e) {}
+}
+
+function validIndex(i) {
+  return Number.isInteger(i) && i >= 0 && i < phrases.length;
+}
 function dueIndices() {
   const now = Date.now(), due = [];
   for (const k in history) {
     const rec = history[k];
-    const gap = REVIEW_GAPS_DAYS[Math.min(rec.n - 1, REVIEW_GAPS_DAYS.length - 1)];
-    if (now - rec.t >= gap * DAY_MS) due.push(Number(k));
+    if (!rec) continue;
+    const n = rec.n || 1;
+    const gap = REVIEW_GAPS_DAYS[Math.min(Math.max(n - 1, 0), REVIEW_GAPS_DAYS.length - 1)];
+    const idx = Number(k);
+    if (!validIndex(idx)) continue;
+    if (rec.force || now - rec.t >= gap * DAY_MS) due.push(idx);
   }
   return due;
 }
@@ -1150,180 +1377,313 @@ function unseenIndices() {
   for (let i = 0; i < phrases.length; i++) if (!(i in history)) u.push(i);
   return u;
 }
-
-// Pick the next phrase: mostly unseen ones, weaving in due reviews (~30%);
-// pure random once everything has been seen and nothing is due.
-function pickNext(avoidIdx) {
-  const due = dueIndices().filter(i => i !== avoidIdx);
-  const unseen = unseenIndices().filter(i => i !== avoidIdx);
-  let pool;
-  if (due.length && (!unseen.length || Math.random() < 0.3)) pool = due;
-  else if (unseen.length) pool = unseen;
-  else {
-    pool = [];
-    for (let i = 0; i < phrases.length; i++) if (i !== avoidIdx) pool.push(i);
+function sortRecall(arr) {
+  return arr.slice().sort((a, b) => {
+    const la = phrases[a].tag === 'Listening' ? 1 : 0;
+    const lb = phrases[b].tag === 'Listening' ? 1 : 0;
+    return la - lb || a - b;
+  });
+}
+function takeInto(picked, arr, n) {
+  for (const i of arr) {
+    if (picked.length >= DAY_SET || n <= 0) break;
+    if (!validIndex(i) || picked.includes(i)) continue;
+    picked.push(i);
+    n--;
   }
-  return pool[Math.floor(Math.random() * pool.length)];
+}
+function ensureDaySet() {
+  if (Array.isArray(day.set) && day.set.length) {
+    day.set = day.set.filter(validIndex);
+    if (day.set.length) return;
+  }
+  const due = dueIndices();
+  const forced = due.filter(i => history[i] && history[i].force);
+  const scheduled = due.filter(i => !(history[i] && history[i].force));
+  const picked = [];
+  takeInto(picked, sortRecall(forced), DAY_SET);
+  const reviewN = Math.min(REVIEW_SLOTS, scheduled.length, DAY_SET - picked.length);
+  takeInto(picked, sortRecall(scheduled), reviewN);
+  takeInto(picked, sortRecall(unseenIndices()), DAY_SET - picked.length);
+  const filler = [];
+  for (let i = 0; i < phrases.length; i++) if (!picked.includes(i)) filler.push(i);
+  filler.sort((a, b) => ((history[a] && history[a].n) || 0) - ((history[b] && history[b].n) || 0) || a - b);
+  takeInto(picked, filler, DAY_SET - picked.length);
+  day.set = picked;
+  day.again = (day.again || []).filter(i => picked.includes(i));
+  day.known = (day.known || []).filter(i => picked.includes(i));
+  saveDay();
 }
 
-// ---- Session trail: left = back through what you saw, right = onward ----
-const seenThisSession = new Set();
-function makeEntry(idx) {
-  // "review" is honest now: the phrase really was seen on an earlier day
-  return { idx, review: idx in history };
-}
-let lastOpened = null;
-try { const v = localStorage.getItem('ee_last'); lastOpened = v === null ? null : Number(v); } catch (e) {}
-const trail = [makeEntry(pickNext(lastOpened))];
-let trailPos = 0;
-function currentEntry() { return trail[trailPos]; }
-
-// Stable color per category, for instant visual recognition
-// (ADS 第2回: 認知コストを下げる軽量ビジュアル).
 function tagColor(tag) {
   let h = 0;
   for (let i = 0; i < tag.length; i++) h = (h * 31 + tag.charCodeAt(i)) % 360;
   return `hsl(${h}, 42%, 64%)`;
 }
 
-function formatDate(d) {
-  const y = d.getFullYear();
-  const m = String(d.getMonth() + 1).padStart(2, '0');
-  const day = String(d.getDate()).padStart(2, '0');
-  return `${y}.${m}.${day}`;
-}
-
-// ---- Hint auto-hide: fade the usage hint once the user knows the ropes ----
 let hintCount = 0;
-try { hintCount = Number(localStorage.getItem('ee_hint') || 0); } catch (e) {}
+try { hintCount = Number(localStorage.getItem('ee_hint_recall') || 0); } catch (e) {}
 function bumpHint() {
   hintCount++;
-  try { localStorage.setItem('ee_hint', String(hintCount)); } catch (e) {}
-  if (hintCount > 12) document.getElementById('swipeHint').style.display = 'none';
+  try { localStorage.setItem('ee_hint_recall', String(hintCount)); } catch (e) {}
+  if (hintCount > 6) document.getElementById('swipeHint').hidden = true;
 }
 
-function renderPhrase() {
-  const entry = currentEntry();
-  const idx = entry.idx;
-  const p = phrases[idx];
+const card = document.getElementById('card');
+const back = document.getElementById('back');
+const gradeBar = document.getElementById('grade');
+const summary = document.getElementById('summary');
+const promptEl = document.getElementById('prompt');
+const hintEl = document.getElementById('swipeHint');
+const speakBtn = document.getElementById('speakBtn');
 
-  // record the viewing once per session per phrase
-  if (!seenThisSession.has(idx)) {
-    seenThisSession.add(idx);
-    const rec = history[idx];
-    history[idx] = { n: rec ? rec.n + 1 : 1, t: Date.now() };
-    saveHistory();
-    try { localStorage.setItem('ee_last', String(idx)); } catch (e) {}
+let queue = [];
+let pos = 0;
+let phase = 'front';
+let ended = false;
+let grading = false;
+let knewCount = 0;
+let missCount = 0;
+let seenCount = 0;
+let remainingMs = SESSION_MS;
+let endsAt = 0;
+let timerOn = false;
+let raf = 0;
+
+function paintTimer() {
+  const sec = Math.ceil(remainingMs / 1000);
+  const m = Math.floor(sec / 60);
+  const s = sec % 60;
+  const timer = document.getElementById('timer');
+  timer.textContent = `${m}:${String(s).padStart(2, '0')}`;
+  timer.classList.toggle('low', sec <= 10 && sec > 0);
+  document.getElementById('timerBar').style.transform = `scaleX(${Math.max(0, remainingMs) / SESSION_MS})`;
+}
+function paintRide() {
+  document.getElementById('ride').textContent = `今日 ${day.rides}回目`;
+  document.getElementById('count').textContent = `この1分 ${seenCount}枚`;
+}
+function tick() {
+  if (!timerOn) return;
+  remainingMs = Math.max(0, endsAt - Date.now());
+  paintTimer();
+  if (remainingMs <= 0) {
+    timerOn = false;
+    finish('time');
+    return;
   }
+  raf = requestAnimationFrame(tick);
+}
+function startTimer() {
+  if (ended || timerOn) return;
+  endsAt = Date.now() + remainingMs;
+  timerOn = true;
+  raf = requestAnimationFrame(tick);
+}
+function pauseTimer() {
+  if (!timerOn) return;
+  remainingMs = Math.max(0, endsAt - Date.now());
+  timerOn = false;
+  cancelAnimationFrame(raf);
+}
 
-  document.getElementById('phraseNumText').textContent = `Phrase #${String(idx + 1).padStart(3, '0')} / ${phrases.length}`;
-  document.getElementById('reviewBadge').className = 'review-badge' + (entry.review ? ' show' : '');
+function buildQueue() {
+  const set = day.set;
+  const again = day.again.filter(i => set.includes(i));
+  const rest = set.filter(i => !day.again.includes(i) && !day.known.includes(i));
+  const known = day.known.filter(i => set.includes(i));
+  return [...again, ...rest, ...known];
+}
 
+function showFront() {
+  phase = 'front';
+  grading = false;
+  document.body.dataset.phase = 'front';
+  const idx = queue[pos];
+  const p = phrases[idx];
+  back.hidden = true;
+  gradeBar.hidden = true;
+  promptEl.hidden = false;
+  card.hidden = false;
+  speakBtn.hidden = false;
+  hintEl.hidden = hintCount > 6;
+
+  const badge = document.getElementById('reviewBadge');
+  const isAgain = day.again.includes(idx);
+  const rec = history[idx];
+  let isReview = false;
+  if (!isAgain && rec) {
+    const n = rec.n || 1;
+    const gap = REVIEW_GAPS_DAYS[Math.min(Math.max(n - 1, 0), REVIEW_GAPS_DAYS.length - 1)];
+    isReview = !!(rec.force || Date.now() - rec.t >= gap * DAY_MS);
+  }
+  badge.textContent = isAgain ? 'もう一度' : '復習';
+  badge.className = 'review-badge' + ((isAgain || isReview) ? ' show' : '');
+
+  document.getElementById('phraseNumText').textContent = `${pos + 1} / ${day.set.length}`;
   const tagEl = document.getElementById('tag');
   tagEl.textContent = p.tag;
   const col = tagColor(p.tag);
   tagEl.style.color = col;
   tagEl.style.borderColor = col;
 
-  document.getElementById('phraseEn').textContent = p.en;
+  const enEl = document.getElementById('phraseEn');
+  enEl.textContent = p.en;
+  enEl.classList.toggle('long', p.en.length > 28);
   document.getElementById('phraseJa').textContent = p.ja;
   document.getElementById('context').textContent = p.context;
   document.getElementById('exampleEn').textContent = p.exEn;
   document.getElementById('exampleJa').textContent = p.exJa;
-  document.getElementById('dateDisplay').textContent = formatDate(new Date());
-  document.getElementById('progress').textContent = `学習済み ${Object.keys(history).length} / ${phrases.length}`;
+  paintRide();
 }
 
-// Animate card transition (guarded against rapid taps)
-let animating = false;
-function transitionTo(update) {
-  if (animating) return;
-  animating = true;
-  const card = document.getElementById('card');
-  card.style.transition = 'opacity 0.18s, transform 0.18s';
-  card.style.opacity = '0';
-  card.style.transform = 'translateY(8px)';
-  setTimeout(() => {
-    update();
-    renderPhrase();
-    card.style.transform = 'translateY(-8px)';
-    setTimeout(() => {
-      card.style.opacity = '1';
-      card.style.transform = 'translateY(0)';
-      animating = false;
-    }, 20);
-  }, 180);
-}
-
-function goNext() {
+function reveal() {
+  if (phase !== 'front' || ended) return;
+  phase = 'back';
+  document.body.dataset.phase = 'back';
+  promptEl.hidden = true;
+  back.hidden = false;
+  gradeBar.hidden = false;
+  hintEl.hidden = true;
   bumpHint();
-  transitionTo(() => {
-    if (trailPos < trail.length - 1) trailPos++;
-    else { trail.push(makeEntry(pickNext(currentEntry().idx))); trailPos++; }
-  });
-}
-function goPrev() {
-  if (trailPos === 0) return;
-  bumpHint();
-  transitionTo(() => { trailPos--; });
-}
-function shuffle() {
-  transitionTo(() => {
-    trail.push(makeEntry(pickNext(currentEntry().idx)));
-    trailPos = trail.length - 1;
-  });
 }
 
-// ---- Speech: pronounce the current phrase (works offline for English) ----
+function grade(knew) {
+  if (phase !== 'back' || grading || ended) return;
+  grading = true;
+  const idx = queue[pos];
+  const prev = history[idx] || { n: 0 };
+  if (knew) {
+    history[idx] = { n: (prev.n || 0) + 1, t: Date.now() };
+    if (!day.known.includes(idx)) day.known.push(idx);
+    day.again = day.again.filter(i => i !== idx);
+    knewCount++;
+  } else {
+    history[idx] = { n: Math.max(prev.n || 0, 1), t: Date.now(), force: true };
+    if (!day.again.includes(idx)) day.again.push(idx);
+    day.known = day.known.filter(i => i !== idx);
+    missCount++;
+  }
+  seenCount++;
+  saveHistory();
+  saveDay();
+  paintRide();
+  pos++;
+  if (remainingMs <= 0) { finish('time'); return; }
+  if (pos >= queue.length) {
+    const missedNow = day.again.filter(i => day.set.includes(i));
+    if (missedNow.length && remainingMs >= 2500) {
+      queue.push(...missedNow);
+      showFront();
+      return;
+    }
+    finish(missedNow.length ? 'time' : 'complete');
+    return;
+  }
+  showFront();
+}
+
+function finish(reason) {
+  if (ended) return;
+  ended = true;
+  phase = 'done';
+  document.body.dataset.phase = 'done';
+  pauseTimer();
+  paintTimer();
+  card.hidden = true;
+  gradeBar.hidden = true;
+  hintEl.hidden = true;
+  speakBtn.hidden = true;
+  summary.hidden = false;
+  document.getElementById('summaryKicker').textContent = reason === 'complete' ? '今日のセットを一周' : '1分終了';
+  document.getElementById('summaryStat').textContent = `${seenCount}枚`;
+  document.getElementById('summarySplit').textContent = `即答 ${knewCount} · もう一度 ${missCount}`;
+  let note;
+  if (!seenCount) note = '英語を見て、意味が浮かぶかを先に思い出してください。';
+  else if (day.again.length) note = `次の1分は、もう一度の${day.again.length}枚からです。`;
+  else if (day.rides >= 4) note = '今日の4回分はここまでです。';
+  else note = '次のエレベーターでも、今日の15枚を思い出してください。';
+  document.getElementById('summaryNote').textContent = note;
+}
+
+function beginSession(countRide) {
+  ensureDaySet();
+  if (countRide) {
+    day.rides += 1;
+    saveDay();
+  }
+  queue = buildQueue();
+  pos = 0;
+  knewCount = 0;
+  missCount = 0;
+  seenCount = 0;
+  remainingMs = SESSION_MS;
+  ended = false;
+  grading = false;
+  summary.hidden = true;
+  hintEl.hidden = hintCount > 6;
+  paintTimer();
+  paintRide();
+  if (!queue.length) { finish('complete'); return; }
+  showFront();
+  startTimer();
+}
+
 function speakCurrent() {
-  if (!('speechSynthesis' in window)) return;
-  bumpHint();
+  if (!('speechSynthesis' in window) || ended) return;
+  const idx = queue[pos];
+  if (!validIndex(idx)) return;
   try {
     speechSynthesis.cancel();
-    const u = new SpeechSynthesisUtterance(phrases[currentEntry().idx].en);
+    const u = new SpeechSynthesisUtterance(phrases[idx].en);
     u.lang = 'en-US';
     u.rate = 0.95;
     speechSynthesis.speak(u);
   } catch (e) {}
 }
 
-// Touch swipe (horizontal only)
+card.addEventListener('click', e => {
+  if (phase !== 'front') return;
+  if (window.getSelection && String(window.getSelection())) return;
+  reveal();
+});
+document.getElementById('btnAgain').addEventListener('click', e => { e.stopPropagation(); grade(false); });
+document.getElementById('btnKnew').addEventListener('click', e => { e.stopPropagation(); grade(true); });
+document.getElementById('btnMore').addEventListener('click', () => beginSession(false));
+speakBtn.addEventListener('click', e => { e.stopPropagation(); speakCurrent(); });
+
 let touchStartX = 0, touchStartY = 0;
 document.addEventListener('touchstart', e => {
   touchStartX = e.touches[0].clientX;
   touchStartY = e.touches[0].clientY;
 }, { passive: true });
 document.addEventListener('touchend', e => {
+  if (phase !== 'back') return;
+  if (e.target.closest('button')) return;
   const dx = e.changedTouches[0].clientX - touchStartX;
   const dy = e.changedTouches[0].clientY - touchStartY;
-  if (Math.abs(dx) > 40 && Math.abs(dx) > Math.abs(dy)) (dx < 0 ? goNext() : goPrev());
+  if (Math.abs(dx) > 48 && Math.abs(dx) > Math.abs(dy)) grade(dx > 0);
 });
 
-// Tap zones: outer 25% = prev/next, center = pronounce.
-// Center taps no longer flip the card while the user is reading.
-document.addEventListener('click', e => {
-  if (e.target.closest('#shuffleBtn') || e.target.closest('#speakBtn')) return;
-  if (window.getSelection && String(window.getSelection())) return; // text being selected
-  const x = e.clientX;
-  const w = window.innerWidth;
-  if (x < w * 0.25) goPrev();
-  else if (x > w * 0.75) goNext();
-  else speakCurrent();
-});
-
-// Keyboard (desktop): arrows navigate, space pronounces
 document.addEventListener('keydown', e => {
-  if (e.key === 'ArrowLeft') goPrev();
-  else if (e.key === 'ArrowRight') goNext();
-  else if (e.key === ' ') { e.preventDefault(); speakCurrent(); }
+  if (e.key === ' ' || e.key === 'Enter') {
+    if (phase !== 'front') return;
+    if (e.target.closest && e.target.closest('button') && e.target.offsetParent !== null) return;
+    e.preventDefault();
+    reveal();
+  } else if (e.key === 'ArrowLeft') {
+    if (phase === 'back') { e.preventDefault(); grade(false); }
+  } else if (e.key === 'ArrowRight') {
+    if (phase === 'back') { e.preventDefault(); grade(true); }
+  }
 });
 
-document.getElementById('shuffleBtn').addEventListener('click', e => { e.stopPropagation(); shuffle(); });
-document.getElementById('speakBtn').addEventListener('click', e => { e.stopPropagation(); speakCurrent(); });
+document.addEventListener('visibilitychange', () => {
+  if (document.hidden) pauseTimer();
+  else if (!ended) startTimer();
+});
 
-// Init
-if (hintCount > 12) document.getElementById('swipeHint').style.display = 'none';
-renderPhrase();
+beginSession(true);
 </script>
 <script>
 if ('serviceWorker' in navigator) {
